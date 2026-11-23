@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "completedAt": "2026-10-28T02:12:38.962980+00:00",
+  "pythonSyntaxPassed": true,
+  "javaSyntaxAndPackagePassed": true,
+  "javaDefaultExecuted": 65,
+  "javaRealMySQLExecuted": 18,
+  "pythonTests": 83,
+  "opsTests": 17,
+  "liveGroups": 11,
+  "liveContractResponses": 32,
+  "staticContractChecks": 9,
+  "normalPaymentsEnabled": false,
+  "demoPaymentsEnabled": true,
+  "normalBusinessDataChanged": false,
+  "frontendPaymentPageImplemented": false,
+  "realThirdPartyPayment": false
+}

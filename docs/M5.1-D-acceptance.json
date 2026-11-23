@@ -1,0 +1,175 @@
+{
+  "version": "5.1.1",
+  "sourceSpecification": "5.1.0-design.1",
+  "executionStatus": "EXECUTED_WITH_LINKED_EVIDENCE",
+  "count": 15,
+  "cases": [
+    {
+      "id": "A01",
+      "scenario": "checkout same key / different keys same draft",
+      "expected": "one immutable pending order; no money or stock change",
+      "result": "PASSED",
+      "evidence": [
+        "evidence/m51d/java-tests.json",
+        "evidence/m51d/mysql-test-cases.json",
+        "evidence/m51d/live-results.json"
+      ]
+    },
+    {
+      "id": "A02",
+      "scenario": "checkout after deadline without existing order",
+      "expected": "409 DRAFT_EXPIRED; no order",
+      "result": "PASSED",
+      "evidence": [
+        "evidence/m51d/java-tests.json",
+        "evidence/m51d/mysql-test-cases.json"
+      ]
+    },
+    {
+      "id": "A03",
+      "scenario": "same key changed expectedVersion or target",
+      "expected": "409 IDEMPOTENCY_CONFLICT",
+      "result": "PASSED",
+      "evidence": [
+        "evidence/m51d/java-tests.json",
+        "evidence/m51d/mysql-test-cases.json"
+      ]
+    },
+    {
+      "id": "A04",
+      "scenario": "successful pay replay with consumed token",
+      "expected": "same receipt; no new ledger, points or deduction",
+      "result": "PASSED",
+      "evidence": [
+        "evidence/m51d/java-tests.json",
+        "evidence/m51d/mysql-test-cases.json",
+        "evidence/m51d/permissions-recovery.json"
+      ]
+    },
+    {
+      "id": "A05",
+      "scenario": "different keys race to pay one order",
+      "expected": "one payment and ledger",
+      "result": "PASSED",
+      "evidence": [
+        "evidence/m51d/java-tests.json",
+        "evidence/m51d/mysql-test-cases.json",
+        "evidence/m51d/stress.json"
+      ]
+    },
+    {
+      "id": "A06",
+      "scenario": "two users buy last stock",
+      "expected": "at most one payment; loser balance unchanged",
+      "result": "PASSED",
+      "evidence": [
+        "evidence/m51d/java-tests.json",
+        "evidence/m51d/mysql-test-cases.json",
+        "evidence/m51d/stress.json"
+      ]
+    },
+    {
+      "id": "A07",
+      "scenario": "pay versus close/expiry",
+      "expected": "exactly one terminal state",
+      "result": "PASSED",
+      "evidence": [
+        "evidence/m51d/java-tests.json",
+        "evidence/m51d/mysql-test-cases.json",
+        "evidence/m51d/stress.json",
+        "evidence/m51d/live-results.json"
+      ]
+    },
+    {
+      "id": "A08",
+      "scenario": "price or qualification changes",
+      "expected": "close CATALOG_CHANGED and revoke grants; no deduction",
+      "result": "PASSED",
+      "evidence": [
+        "evidence/m51d/java-tests.json",
+        "evidence/m51d/mysql-test-cases.json",
+        "evidence/m51d/stress.json"
+      ]
+    },
+    {
+      "id": "A09",
+      "scenario": "stock or balance insufficient",
+      "expected": "remain pending, revoke grants; no deduction",
+      "result": "PASSED",
+      "evidence": [
+        "evidence/m51d/java-tests.json",
+        "evidence/m51d/mysql-test-cases.json",
+        "evidence/m51d/stress.json"
+      ]
+    },
+    {
+      "id": "A10",
+      "scenario": "database failure after debit before ledger",
+      "expected": "all effects rollback; UNKNOWN unless rollback proven",
+      "result": "PASSED",
+      "evidence": [
+        "evidence/m51d/java-tests.json",
+        "evidence/m51d/mysql-test-cases.json",
+        "evidence/m51d/mysql-test-cases.json"
+      ]
+    },
+    {
+      "id": "A11",
+      "scenario": "agent/cross-user/revoked parent session",
+      "expected": "403/404/401; no sensitive view or funds change",
+      "result": "PASSED",
+      "evidence": [
+        "evidence/m51d/java-tests.json",
+        "evidence/m51d/mysql-test-cases.json",
+        "evidence/m51d/permissions-recovery.json",
+        "evidence/m51d/browser-faults.json"
+      ]
+    },
+    {
+      "id": "A12",
+      "scenario": "authorization response arrives after revoke/account switch",
+      "expected": "discard and revoke exact old authorization; preserve new grant",
+      "result": "PASSED",
+      "evidence": [
+        "evidence/m51d/java-tests.json",
+        "evidence/m51d/mysql-test-cases.json",
+        "evidence/m51d/browser-faults.json",
+        "evidence/m51d/fault-events-summary.json"
+      ]
+    },
+    {
+      "id": "A13",
+      "scenario": "five incorrect password attempts then business rollback",
+      "expected": "900 second lock remains persisted",
+      "result": "PASSED",
+      "evidence": [
+        "evidence/m51d/java-tests.json",
+        "evidence/m51d/mysql-test-cases.json",
+        "evidence/m51d/stress.json"
+      ]
+    },
+    {
+      "id": "A14",
+      "scenario": "historical completed without reconciled ledger",
+      "expected": "LEGACY_UNVERIFIED; cannot pay",
+      "result": "PASSED",
+      "evidence": [
+        "evidence/m51d/java-tests.json",
+        "evidence/m51d/mysql-test-cases.json"
+      ]
+    },
+    {
+      "id": "A15",
+      "scenario": "response lost after committed payment",
+      "expected": "GET returns PAID and original receipt; no automatic new payment",
+      "result": "PASSED",
+      "evidence": [
+        "evidence/m51d/java-tests.json",
+        "evidence/m51d/mysql-test-cases.json",
+        "evidence/m51d/browser-faults.json",
+        "evidence/m51d/permissions-recovery.json"
+      ]
+    }
+  ],
+  "notAdditionalTestExecutions": true
+}

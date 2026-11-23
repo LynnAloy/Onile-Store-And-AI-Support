@@ -1,0 +1,7 @@
+{
+  "passed": true,
+  "tests": 22,
+  "realMySQL": true,
+  "disposableSchemaOnly": true,
+  "normalFundsChanged": false
+}

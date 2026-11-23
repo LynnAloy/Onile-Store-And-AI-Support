@@ -1,0 +1,27 @@
+{
+  "passed": true,
+  "checks": [
+    "design is explicitly not implemented",
+    "six USER-only operations",
+    "all local references resolve",
+    "write DTOs reject client identity and amount",
+    "PIN is a write-only string",
+    "integer quantities and fixed decimal money",
+    "payment capability is separate from USER identity",
+    "late authorizations support scoped revocation",
+    "private success responses prohibit caching",
+    "versioned acceptance vectors are specifications",
+    "migration proposal is additive DDL only",
+    "no automatic payment DDL execution",
+    "source/order and payment/ledger uniqueness",
+    "AI runtime source hashes unchanged; implemented UI is checked separately"
+  ],
+  "count": 14,
+  "acceptanceVectors": 15,
+  "mysqlDDLExecutedByThisCheck": false,
+  "paymentExecutedByThisCheck": false,
+  "runtimeComparisonPrefixes": [
+    "python-ai/app/"
+  ],
+  "limitations": "Frozen design static recheck only. Implemented Java/UI changes require the current runtime suites; this result does not freeze or validate those sources."
+}

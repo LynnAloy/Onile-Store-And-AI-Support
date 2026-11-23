@@ -1,0 +1,54 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "check": "Actual draft checkout is unpaid, exact decimal and unique across request keys",
+      "passed": true
+    },
+    {
+      "check": "Real payment, consumed-token replay and changed-key retry debit money/stock exactly once",
+      "passed": true
+    },
+    {
+      "check": "Private recovery finds committed receipt; cross-user reads and closing PAID are rejected",
+      "passed": true
+    },
+    {
+      "check": "Both agent roles cannot verify, authorize or pay",
+      "passed": true
+    },
+    {
+      "check": "Native model reads authoritative PAID summary without shipping or payment credentials",
+      "passed": true
+    },
+    {
+      "check": "Late authorization cleanup does not revoke a subsequently issued capability",
+      "passed": true
+    },
+    {
+      "check": "Real price conflict persists CLOSED and revocation without deducting funds",
+      "passed": true
+    },
+    {
+      "check": "Real MySQL two-user last-stock race has one winner, loser funds unchanged",
+      "passed": true
+    },
+    {
+      "check": "Real MySQL pay/close race resolves to exactly one terminal outcome",
+      "passed": true
+    },
+    {
+      "check": "Order expiry is enforced on read and persisted without a scheduler",
+      "passed": true
+    },
+    {
+      "check": "Enabled M5 refuses legacy direct checkout bypass",
+      "passed": true
+    }
+  ],
+  "failure": null,
+  "contractResponsesChecked": 32,
+  "realMySQL": true,
+  "syntheticOnly": true,
+  "normalFundsChanged": false
+}

@@ -1,0 +1,144 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "check": "10 concurrent same/different-key requests debit and award points once",
+      "passed": true,
+      "round": 1
+    },
+    {
+      "check": "10 concurrent same/different-key requests debit and award points once",
+      "passed": true,
+      "round": 2
+    },
+    {
+      "check": "10 concurrent same/different-key requests debit and award points once",
+      "passed": true,
+      "round": 3
+    },
+    {
+      "check": "10 concurrent same/different-key requests debit and award points once",
+      "passed": true,
+      "round": 4
+    },
+    {
+      "check": "10 concurrent same/different-key requests debit and award points once",
+      "passed": true,
+      "round": 5
+    },
+    {
+      "check": "Two users compete for last item without oversell or loser debit",
+      "passed": true,
+      "round": 1
+    },
+    {
+      "check": "Two users compete for last item without oversell or loser debit",
+      "passed": true,
+      "round": 2
+    },
+    {
+      "check": "Two users compete for last item without oversell or loser debit",
+      "passed": true,
+      "round": 3
+    },
+    {
+      "check": "Two users compete for last item without oversell or loser debit",
+      "passed": true,
+      "round": 4
+    },
+    {
+      "check": "Two users compete for last item without oversell or loser debit",
+      "passed": true,
+      "round": 5
+    },
+    {
+      "check": "Pay/close race has one terminal state and matching financial effects",
+      "passed": true,
+      "round": 1,
+      "terminal": "CLOSED"
+    },
+    {
+      "check": "Pay/close race has one terminal state and matching financial effects",
+      "passed": true,
+      "round": 2,
+      "terminal": "CLOSED"
+    },
+    {
+      "check": "Pay/close race has one terminal state and matching financial effects",
+      "passed": true,
+      "round": 3,
+      "terminal": "CLOSED"
+    },
+    {
+      "check": "Pay/close race has one terminal state and matching financial effects",
+      "passed": true,
+      "round": 4,
+      "terminal": "CLOSED"
+    },
+    {
+      "check": "Pay/close race has one terminal state and matching financial effects",
+      "passed": true,
+      "round": 5,
+      "terminal": "CLOSED"
+    },
+    {
+      "check": "Unsafe or insufficient conditions refuse all financial effects",
+      "passed": true,
+      "scenario": "RX"
+    },
+    {
+      "check": "Unsafe or insufficient conditions refuse all financial effects",
+      "passed": true,
+      "scenario": "UNKNOWN"
+    },
+    {
+      "check": "Unsafe or insufficient conditions refuse all financial effects",
+      "passed": true,
+      "scenario": "PENDING"
+    },
+    {
+      "check": "Unsafe or insufficient conditions refuse all financial effects",
+      "passed": true,
+      "scenario": "qualification"
+    },
+    {
+      "check": "Unsafe or insufficient conditions refuse all financial effects",
+      "passed": true,
+      "scenario": "price"
+    },
+    {
+      "check": "Unsafe or insufficient conditions refuse all financial effects",
+      "passed": true,
+      "scenario": "stock"
+    },
+    {
+      "check": "Unsafe or insufficient conditions refuse all financial effects",
+      "passed": true,
+      "scenario": "balance"
+    },
+    {
+      "check": "Five wrong PIN attempts persist and lock without expiring USER session",
+      "passed": true
+    },
+    {
+      "check": "All paid orders reconcile wallet, points, ledgers and inventory",
+      "passed": true
+    }
+  ],
+  "count": 24,
+  "financialAudit": {
+    "passed": true,
+    "purchaseAmount": "22.00",
+    "paidOrders": 10,
+    "purchaseLedgers": 10,
+    "paymentRecords": 10,
+    "pointsAwarded": 20,
+    "inventoryDeducted": 20,
+    "walletBalance": "78.00"
+  },
+  "failure": null,
+  "realHTTP": true,
+  "realMySQL": true,
+  "syntheticOnly": true,
+  "roundsPerConcurrencyCase": 5
+}

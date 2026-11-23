@@ -1,0 +1,98 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "role": "AGENT_READ",
+      "operation": "checkout",
+      "status": 403,
+      "passed": true
+    },
+    {
+      "role": "AGENT_READ",
+      "operation": "private_order",
+      "status": 403,
+      "passed": true
+    },
+    {
+      "role": "AGENT_READ",
+      "operation": "authorize",
+      "status": 403,
+      "passed": true
+    },
+    {
+      "role": "AGENT_READ",
+      "operation": "revoke",
+      "status": 403,
+      "passed": true
+    },
+    {
+      "role": "AGENT_READ",
+      "operation": "pay",
+      "status": 403,
+      "passed": true
+    },
+    {
+      "role": "AGENT_READ",
+      "operation": "close",
+      "status": 403,
+      "passed": true
+    },
+    {
+      "role": "AGENT_ORDER_PREPARE",
+      "operation": "checkout",
+      "status": 403,
+      "passed": true
+    },
+    {
+      "role": "AGENT_ORDER_PREPARE",
+      "operation": "private_order",
+      "status": 403,
+      "passed": true
+    },
+    {
+      "role": "AGENT_ORDER_PREPARE",
+      "operation": "authorize",
+      "status": 403,
+      "passed": true
+    },
+    {
+      "role": "AGENT_ORDER_PREPARE",
+      "operation": "revoke",
+      "status": 403,
+      "passed": true
+    },
+    {
+      "role": "AGENT_ORDER_PREPARE",
+      "operation": "pay",
+      "status": 403,
+      "passed": true
+    },
+    {
+      "role": "AGENT_ORDER_PREPARE",
+      "operation": "close",
+      "status": 403,
+      "passed": true
+    },
+    {
+      "operation": "foreign_USER_order",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "operation": "final_build_commit_response_loss",
+      "passed": true
+    },
+    {
+      "operation": "final_build_restart_recovery",
+      "passed": true
+    },
+    {
+      "operation": "explicit_receipt_replay_debits_once",
+      "passed": true
+    }
+  ],
+  "count": 16,
+  "realHTTP": true,
+  "realMySQL": true,
+  "syntheticOnly": true
+}

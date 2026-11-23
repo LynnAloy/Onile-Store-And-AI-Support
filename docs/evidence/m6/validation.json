@@ -1,0 +1,78 @@
+{
+  "passed": true,
+  "java": {
+    "executed": 84,
+    "suites": [
+      {
+        "name": "com.example.mybatisplus.CommerceBusinessTests",
+        "tests": 15,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "com.example.mybatisplus.CommerceMySqlTests",
+        "tests": 15,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 15
+      },
+      {
+        "name": "com.example.mybatisplus.M1SecurityBusinessTests",
+        "tests": 47,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "com.example.mybatisplus.MybatisPlusDemoApplicationTests",
+        "tests": 1,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "com.example.mybatisplus.PaymentBusinessTests",
+        "tests": 21,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "com.example.mybatisplus.PaymentMySqlTests",
+        "tests": 22,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 22
+      }
+    ]
+  },
+  "realMySQL": {
+    "commerce": 15,
+    "existingPayments": 22,
+    "temporaryPrivilegeIsolatedSchemas": true
+  },
+  "python": {
+    "passed": 83,
+    "runner": "unittest"
+  },
+  "frontend": {
+    "passed": 64,
+    "viteBuild": true
+  },
+  "operations": {
+    "passed": 23
+  },
+  "syntax": {
+    "javaCompile": true,
+    "pythonCompileall": true,
+    "openApiAndManifestJson": true
+  },
+  "liveModelAndBrowser": true,
+  "syntheticFixturesCleaned": true,
+  "review": "docs/M6-review.md",
+  "knownBuildWarnings": [
+    "Existing full Element Plus bundle exceeds Vite 500 kB warning threshold"
+  ],
+  "completedAt": "2026-10-28 Asia/Hong_Kong"
+}

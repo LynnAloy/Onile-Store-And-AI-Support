@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "realMySQL": true,
+  "realLocalModel": true,
+  "onlySyntheticWallet": "2.50",
+  "missingEvidenceDenied": true,
+  "frontendBypassWithAllergyDenied": true,
+  "ordinaryUserCannotApproveEvidence": true,
+  "reviewedEvidenceIncludedInCategoryResult": true,
+  "authorizedHealthUsedInGraph": true,
+  "staleEvidenceDenied": true,
+  "replaySingleDebit": true
+}

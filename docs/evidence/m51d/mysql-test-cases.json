@@ -1,0 +1,95 @@
+{
+  "passed": true,
+  "tests": [
+    {
+      "name": "expiresOrderAndRetainsLegacyUnverified",
+      "class": "com.example.mybatisplus.PaymentMySqlTests"
+    },
+    {
+      "name": "competingUsersCannotOversellAndCloseRaceHasOneWinner",
+      "class": "com.example.mybatisplus.PaymentMySqlTests"
+    },
+    {
+      "name": "passwordLockPersistsAndDoesNotIssueGrant",
+      "class": "com.example.mybatisplus.PaymentMySqlTests"
+    },
+    {
+      "name": "priceChangeClosesAndOldSnapshotCannotPay",
+      "class": "com.example.mybatisplus.PaymentMySqlTests"
+    },
+    {
+      "name": "abandonedRequestIsFencedAndLatePaymentCannotDebit",
+      "class": "com.example.mybatisplus.PaymentMySqlTests"
+    },
+    {
+      "name": "failureAfterDebitRollsBackAllEffectsAndSameRequestCanRecover",
+      "class": "com.example.mybatisplus.PaymentMySqlTests"
+    },
+    {
+      "name": "expiredAuthorizationAndStockRejectDoNotCloseOrder",
+      "class": "com.example.mybatisplus.PaymentMySqlTests"
+    },
+    {
+      "name": "authorizationRolesOwnershipStrictJsonAndLegacyBypass",
+      "class": "com.example.mybatisplus.PaymentMySqlTests"
+    },
+    {
+      "name": "reconciliationWaitsForRunningFinancialTransaction",
+      "class": "com.example.mybatisplus.PaymentMySqlTests"
+    },
+    {
+      "name": "expiredOrRevokedGrantCannotPayAndNewerGrantSurvivesLateCleanup",
+      "class": "com.example.mybatisplus.PaymentMySqlTests"
+    },
+    {
+      "name": "successfulReplayIgnoresSpentTokenButChangedBodyConflicts",
+      "class": "com.example.mybatisplus.PaymentMySqlTests"
+    },
+    {
+      "name": "amountOverflowAndUnconfirmedOrExpiredDraftCannotConvert",
+      "class": "com.example.mybatisplus.PaymentMySqlTests"
+    },
+    {
+      "name": "checkoutIsUnpaidUniqueImmutableAndBoundToFingerprint",
+      "class": "com.example.mybatisplus.PaymentMySqlTests"
+    },
+    {
+      "name": "staleExpiredOrderClosesWithoutFinancialEffects",
+      "class": "com.example.mybatisplus.PaymentMySqlTests"
+    },
+    {
+      "name": "definiteRejectionCommitsRevocationAndDoesNotMoveMoney",
+      "class": "com.example.mybatisplus.PaymentMySqlTests"
+    },
+    {
+      "name": "freshRequestsAreNotReconciledAndPaidAuditRepairsOnlyRequestMetadata",
+      "class": "com.example.mybatisplus.PaymentMySqlTests"
+    },
+    {
+      "name": "paymentAtomicallyCommitsAndReplaysEvenWithConsumedAuthorization",
+      "class": "com.example.mybatisplus.PaymentMySqlTests"
+    },
+    {
+      "name": "agentSummaryHasAuthoritativeStateButNoPrivatePaymentFields",
+      "class": "com.example.mybatisplus.PaymentMySqlTests"
+    },
+    {
+      "name": "logoutInvalidatesCapabilityButPreservesPaidAudit",
+      "class": "com.example.mybatisplus.PaymentMySqlTests"
+    },
+    {
+      "name": "qualificationChangeClosesAndPointsOverflowRejectsAtomically",
+      "class": "com.example.mybatisplus.PaymentMySqlTests"
+    },
+    {
+      "name": "concurrentDifferentKeysStillDebitOnce",
+      "class": "com.example.mybatisplus.PaymentMySqlTests"
+    },
+    {
+      "name": "paidAuditPreventsRollbackToLegacyMode",
+      "class": "com.example.mybatisplus.PaymentMySqlTests"
+    }
+  ],
+  "count": 22,
+  "realMySQL": true
+}

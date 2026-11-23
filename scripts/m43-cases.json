@@ -1,0 +1,12 @@
+{
+  "version": "m43-v1",
+  "repeats": 3,
+  "cases": [
+    {"id":"two-quantities","prompt":"帮我下单5件虚构演示甲，3件虚构演示乙","quantities":{"虚构演示甲":5,"虚构演示乙":3}},
+    {"id":"missing-quantity","prompt":"我想购买虚构演示甲，请给我待核对清单，数量还没有决定。","quantities":{"虚构演示甲":null}},
+    {"id":"pending-review","prompt":"帮我下单2件虚构待审核","quantities":{"虚构待审核":2},"blocked":true},
+    {"id":"prescription","prompt":"帮我下单2件虚构处方","quantities":{"虚构处方":2},"blocked":true},
+    {"id":"zero-stock","prompt":"帮我下单2件虚构缺货","quantities":{"虚构缺货":2},"zeroStock":true},
+    {"id":"ambiguous","prompt":"我想购买2件虚构多规格，请先查询，规格还没有决定。","ambiguous":true}
+  ]
+}

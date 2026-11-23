@@ -1,0 +1,1396 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "DeepseekDoc Java–Python AI Contract",
+    "version": "4.3.0",
+    "description": "Java business and explicitly authorized profile context; Python conversation and public RAG. Agent delegation cannot pay."
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8080",
+      "description": "Local development; use a private HTTPS origin in deployment"
+    }
+  ],
+  "security": [
+    {
+      "AgentToken": [],
+      "AIServiceKey": []
+    }
+  ],
+  "paths": {
+    "/api/auth/agent-token": {
+      "post": {
+        "operationId": "issueAgentToken",
+        "summary": "Browser exchanges its USER session for a short-lived read-only delegation",
+        "security": [
+          {
+            "UserToken": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Expires in at most 300 seconds and no later than its parent session",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Delegation"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          }
+        }
+      }
+    },
+    "/internal/ai/v1/me": {
+      "get": {
+        "operationId": "getDelegatedIdentity",
+        "summary": "Resolve the user from delegation; never take identity from the model",
+        "responses": {
+          "200": {
+            "description": "Delegated identity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "userId",
+                    "scope"
+                  ],
+                  "additionalProperties": false,
+                  "properties": {
+                    "userId": {
+                      "type": "string"
+                    },
+                    "scope": {
+                      "type": "string",
+                      "enum": [
+                        "AGENT_READ"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          }
+        }
+      }
+    },
+    "/internal/ai/v1/medicines": {
+      "get": {
+        "operationId": "searchMedicines",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "name",
+            "schema": {
+              "type": "string",
+              "maxLength": 100
+            },
+            "description": "Optional substring search; M1 does not infer clinical suitability."
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 20,
+              "default": 10
+            },
+            "description": "Stable id ascending; result count upper bound."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Real-time Java catalog",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Medicine"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          }
+        }
+      }
+    },
+    "/internal/ai/v1/medicines/{id}": {
+      "get": {
+        "operationId": "getMedicine",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "minimum": 1
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Catalog item",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Medicine"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          }
+        }
+      }
+    },
+    "/internal/ai/v1/orders/{orderId}": {
+      "get": {
+        "operationId": "getOwnedOrder",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "orderId",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "maxLength": 64,
+              "pattern": "^[A-Za-z0-9_-]+$"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Current user's order, excluding recipient PII",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrderSummary"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          }
+        }
+      }
+    },
+    "/internal/ai/v1/personalization-status": {
+      "get": {
+        "operationId": "personalization_status",
+        "summary": "Read current delegated user profile consent binding",
+        "responses": {
+          "200": {
+            "description": "Current binding; no-store response",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "enum": [
+                    "no-store"
+                  ]
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PersonalizationStatus"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          }
+        }
+      }
+    },
+    "/internal/ai/v1/personalization-context": {
+      "get": {
+        "operationId": "personalization_context",
+        "summary": "Read current delegated user profile consent binding",
+        "responses": {
+          "200": {
+            "description": "Current binding; no-store response",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "enum": [
+                    "no-store"
+                  ]
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PersonalizationContext"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          }
+        }
+      }
+    },
+    "/api/auth/order-agent-token": {
+      "post": {
+        "summary": "Authorize only the supplied items for at most 300 seconds",
+        "security": [
+          {
+            "UserToken": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "No-store; successful draft action never means payment",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrderPreparationGrant"
+                }
+              }
+            },
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "enum": [
+                    "no-store"
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "401": {
+            "description": "Missing/expired/revoked identity"
+          },
+          "403": {
+            "description": "Wrong scope"
+          },
+          "404": {
+            "description": "Not found or not owned"
+          },
+          "409": {
+            "description": "Intent/key/version/qualification/price/stock/state conflict"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DraftIntent"
+              }
+            }
+          }
+        },
+        "description": "Required scope: USER"
+      },
+      "delete": {
+        "summary": "Revoke all own preparation grants, or only the supplied own requestKey; keep drafts",
+        "security": [
+          {
+            "UserToken": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "No-store; successful draft action never means payment",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "enum": [
+                    "no-store"
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "401": {
+            "description": "Missing/expired/revoked identity"
+          },
+          "403": {
+            "description": "Wrong scope"
+          },
+          "404": {
+            "description": "Not found or not owned"
+          },
+          "409": {
+            "description": "Intent/key/version/qualification/price/stock/state conflict"
+          }
+        },
+        "description": "Required scope: USER",
+        "parameters": [
+          {
+            "name": "requestKey",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "Omit to revoke all own order-preparation grants; supply to revoke only this own request. Invalid format returns 400; foreign or absent key is a non-enumerating no-op."
+          }
+        ]
+      }
+    },
+    "/internal/ai/v1/order-preparation": {
+      "get": {
+        "summary": "Read server-owned user/items/requestKey/expiry binding",
+        "security": [
+          {
+            "OrderAgentToken": [],
+            "AIServiceKey": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "No-store; successful draft action never means payment",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrderPreparationBinding"
+                }
+              }
+            },
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "enum": [
+                    "no-store"
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "401": {
+            "description": "Missing/expired/revoked identity"
+          },
+          "403": {
+            "description": "Wrong scope"
+          },
+          "404": {
+            "description": "Not found or not owned"
+          },
+          "409": {
+            "description": "Intent/key/version/qualification/price/stock/state conflict"
+          }
+        },
+        "description": "Required scope: AGENT_ORDER_PREPARE"
+      }
+    },
+    "/internal/ai/v1/order-drafts": {
+      "post": {
+        "summary": "Prepare or recover one unpaid draft for this grant",
+        "security": [
+          {
+            "OrderAgentToken": [],
+            "AIServiceKey": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "No-store; successful draft action never means payment",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DraftSnapshot"
+                }
+              }
+            },
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "enum": [
+                    "no-store"
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "401": {
+            "description": "Missing/expired/revoked identity"
+          },
+          "403": {
+            "description": "Wrong scope"
+          },
+          "404": {
+            "description": "Not found or not owned"
+          },
+          "409": {
+            "description": "Intent/key/version/qualification/price/stock/state conflict"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DraftIntent"
+              }
+            }
+          }
+        },
+        "description": "Required scope: AGENT_ORDER_PREPARE",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Idempotency-Key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Must equal server-issued grant requestKey."
+          }
+        ]
+      }
+    },
+    "/api/order-drafts": {
+      "get": {
+        "summary": "List owned drafts; recover by optional requestKey",
+        "security": [
+          {
+            "UserToken": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "No-store; successful draft action never means payment",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/UserDraftView"
+                  }
+                }
+              }
+            },
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "enum": [
+                    "no-store"
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "401": {
+            "description": "Missing/expired/revoked identity"
+          },
+          "403": {
+            "description": "Wrong scope"
+          },
+          "404": {
+            "description": "Not found or not owned"
+          },
+          "409": {
+            "description": "Intent/key/version/qualification/price/stock/state conflict"
+          }
+        },
+        "description": "Required scope: USER",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "requestKey",
+            "schema": {
+              "type": "string",
+              "maxLength": 64
+            }
+          }
+        ]
+      }
+    },
+    "/api/order-drafts/{id}": {
+      "get": {
+        "summary": "Owned draft with current qualification/price/stock and private shipping",
+        "security": [
+          {
+            "UserToken": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "No-store; successful draft action never means payment",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserDraftView"
+                }
+              }
+            },
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "enum": [
+                    "no-store"
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "401": {
+            "description": "Missing/expired/revoked identity"
+          },
+          "403": {
+            "description": "Wrong scope"
+          },
+          "404": {
+            "description": "Not found or not owned"
+          },
+          "409": {
+            "description": "Intent/key/version/qualification/price/stock/state conflict"
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "description": "Required scope: USER"
+      }
+    },
+    "/api/order-drafts/{id}/confirm": {
+      "post": {
+        "summary": "Revalidate and confirm a version plus shipping; never pay",
+        "security": [
+          {
+            "UserToken": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "No-store; successful draft action never means payment",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserDraftView"
+                }
+              }
+            },
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "enum": [
+                    "no-store"
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "401": {
+            "description": "Missing/expired/revoked identity"
+          },
+          "403": {
+            "description": "Wrong scope"
+          },
+          "404": {
+            "description": "Not found or not owned"
+          },
+          "409": {
+            "description": "Intent/key/version/qualification/price/stock/state conflict"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DraftConfirm"
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "description": "Required scope: USER"
+      }
+    },
+    "/api/order-drafts/{id}/cancel": {
+      "post": {
+        "summary": "Cancel PREPARED version; repeat same cancellation is idempotent",
+        "security": [
+          {
+            "UserToken": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "No-store; successful draft action never means payment",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserDraftView"
+                }
+              }
+            },
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "enum": [
+                    "no-store"
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "401": {
+            "description": "Missing/expired/revoked identity"
+          },
+          "403": {
+            "description": "Wrong scope"
+          },
+          "404": {
+            "description": "Not found or not owned"
+          },
+          "409": {
+            "description": "Intent/key/version/qualification/price/stock/state conflict"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DraftVersion"
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "description": "Required scope: USER"
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "UserToken": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "Opaque USER session"
+      },
+      "AgentToken": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "Opaque AGENT_READ delegation"
+      },
+      "AIServiceKey": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-AI-Service-Key",
+        "description": "Server-only shared secret, at least 32 characters. Never expose to browser or LLM."
+      },
+      "OrderAgentToken": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "opaque",
+        "description": "Separate AGENT_ORDER_PREPARE delegation, bound to a USER parent, exact items and server requestKey; max 300 seconds. Cannot read general APIs, confirm or pay."
+      }
+    },
+    "schemas": {
+      "Error": {
+        "type": "object",
+        "required": [
+          "code",
+          "message"
+        ],
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        }
+      },
+      "Delegation": {
+        "type": "object",
+        "required": [
+          "token",
+          "userId",
+          "scope",
+          "expiresAt"
+        ],
+        "properties": {
+          "token": {
+            "type": "string",
+            "minLength": 43,
+            "maxLength": 43
+          },
+          "userId": {
+            "type": "string"
+          },
+          "scope": {
+            "type": "string",
+            "enum": [
+              "AGENT_READ"
+            ]
+          },
+          "expiresAt": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Unix epoch seconds"
+          }
+        }
+      },
+      "Medicine": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "price",
+          "stock"
+        ],
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "price": {
+            "type": "number",
+            "multipleOf": 0.01,
+            "description": "CNY yuan; parse via decimal arithmetic"
+          },
+          "stock": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "saleClassification": {
+            "type": "string",
+            "enum": [
+              "UNKNOWN",
+              "OTC",
+              "RX"
+            ]
+          },
+          "reviewStatus": {
+            "type": "string",
+            "enum": [
+              "PENDING",
+              "APPROVED",
+              "WITHDRAWN"
+            ]
+          },
+          "referenceSource": {
+            "type": "string",
+            "nullable": true
+          },
+          "reviewedBy": {
+            "type": "string",
+            "nullable": true
+          },
+          "qualificationVersion": {
+            "type": "integer"
+          },
+          "draftEligible": {
+            "type": "boolean"
+          },
+          "draftBlockedReason": {
+            "type": "string"
+          }
+        }
+      },
+      "OrderItem": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "orderId": {
+            "type": "string"
+          },
+          "medicineId": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "quantity": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "price": {
+            "type": "number",
+            "multipleOf": 0.01
+          }
+        }
+      },
+      "OrderSummary": {
+        "type": "object",
+        "required": [
+          "orderId",
+          "status",
+          "totalPrice",
+          "currency",
+          "items"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "orderId": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "pending",
+              "completed",
+              "cancelled"
+            ]
+          },
+          "totalPrice": {
+            "type": "number",
+            "multipleOf": 0.01
+          },
+          "currency": {
+            "type": "string",
+            "enum": [
+              "CNY"
+            ]
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OrderItem"
+            }
+          }
+        }
+      },
+      "PersonalizationStatus": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "enabled",
+          "revision"
+        ],
+        "properties": {
+          "enabled": {
+            "type": "boolean"
+          },
+          "revision": {
+            "type": "integer",
+            "format": "int64",
+            "minimum": 0
+          }
+        }
+      },
+      "HealthContext": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "heightCm": {
+            "type": "number"
+          },
+          "weightKg": {
+            "type": "number"
+          },
+          "bmi": {
+            "type": "number"
+          },
+          "age": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 120
+          },
+          "gender": {
+            "type": "string",
+            "enum": [
+              "Male",
+              "Female"
+            ]
+          },
+          "medicalHistory": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "medicalHistoryText": {
+            "type": "string",
+            "maxLength": 2000
+          },
+          "allergiesText": {
+            "type": "string",
+            "maxLength": 1000
+          },
+          "medicationsText": {
+            "type": "string",
+            "maxLength": 1000
+          },
+          "lifestyleText": {
+            "type": "string",
+            "maxLength": 1000
+          },
+          "healthNotes": {
+            "type": "string",
+            "maxLength": 2000
+          }
+        },
+        "description": "Self-reported health only. No identity/contact/business fields."
+      },
+      "PersonalizationContext": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "enabled",
+          "revision"
+        ],
+        "properties": {
+          "enabled": {
+            "type": "boolean"
+          },
+          "revision": {
+            "type": "integer",
+            "format": "int64",
+            "minimum": 0
+          },
+          "profile": {
+            "$ref": "#/components/schemas/HealthContext"
+          }
+        },
+        "description": "profile MUST be absent when enabled=false; optional empty object when enabled=true."
+      },
+      "DraftItem": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "medicineId",
+          "quantity"
+        ],
+        "properties": {
+          "medicineId": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "quantity": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 99
+          }
+        }
+      },
+      "DraftIntent": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "items"
+        ],
+        "properties": {
+          "items": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 10,
+            "items": {
+              "$ref": "#/components/schemas/DraftItem"
+            }
+          }
+        },
+        "description": "Unique product IDs. Sorted canonical order; server-derived identity/prices/key."
+      },
+      "DraftVersion": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "version"
+        ],
+        "properties": {
+          "version": {
+            "type": "integer",
+            "minimum": 1
+          }
+        }
+      },
+      "DraftConfirm": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "version",
+          "recipientName",
+          "recipientPhone",
+          "recipientAddress"
+        ],
+        "properties": {
+          "version": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "recipientName": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 15
+          },
+          "recipientPhone": {
+            "type": "string",
+            "pattern": "^1[3-9][0-9]{9}$"
+          },
+          "recipientAddress": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 50
+          }
+        }
+      },
+      "DraftSnapshot": {
+        "type": "object",
+        "required": [
+          "draftId",
+          "status",
+          "version",
+          "totalPrice",
+          "currency",
+          "paid",
+          "items",
+          "expiresAt"
+        ],
+        "properties": {
+          "draftId": {
+            "type": "string"
+          },
+          "requestKey": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "PREPARED",
+              "CONFIRMED",
+              "CANCELLED",
+              "EXPIRED"
+            ]
+          },
+          "version": {
+            "type": "integer"
+          },
+          "totalPrice": {
+            "type": "string",
+            "description": "Decimal CNY, 2 fractional digits"
+          },
+          "currency": {
+            "type": "string",
+            "enum": [
+              "CNY"
+            ]
+          },
+          "paid": {
+            "type": "boolean",
+            "enum": [
+              false
+            ]
+          },
+          "expiresAt": {
+            "type": "integer"
+          },
+          "items": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 10,
+            "items": {
+              "$ref": "#/components/schemas/DraftLine"
+            }
+          },
+          "createdAt": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "description": "Internal whitelist; USER views additionally contain own shipping, current prices/stocks, blockingReasons and canConfirm. No stock reservation or payment."
+      },
+      "OrderPreparationBinding": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "userId",
+          "scope",
+          "expiresAt",
+          "requestKey",
+          "items"
+        ],
+        "properties": {
+          "userId": {
+            "type": "string"
+          },
+          "scope": {
+            "type": "string",
+            "enum": [
+              "AGENT_ORDER_PREPARE"
+            ]
+          },
+          "expiresAt": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "requestKey": {
+            "type": "string",
+            "maxLength": 64
+          },
+          "items": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 10,
+            "items": {
+              "$ref": "#/components/schemas/DraftItem"
+            }
+          }
+        }
+      },
+      "OrderPreparationGrant": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "token",
+          "userId",
+          "scope",
+          "expiresAt",
+          "requestKey",
+          "items"
+        ],
+        "properties": {
+          "token": {
+            "type": "string",
+            "minLength": 43,
+            "maxLength": 43
+          },
+          "userId": {
+            "type": "string"
+          },
+          "scope": {
+            "type": "string",
+            "enum": [
+              "AGENT_ORDER_PREPARE"
+            ]
+          },
+          "expiresAt": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "requestKey": {
+            "type": "string",
+            "maxLength": 64
+          },
+          "items": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 10,
+            "items": {
+              "$ref": "#/components/schemas/DraftItem"
+            }
+          }
+        }
+      },
+      "DraftLine": {
+        "type": "object",
+        "required": [
+          "medicineId",
+          "name",
+          "quantity",
+          "price"
+        ],
+        "properties": {
+          "medicineId": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "quantity": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 99
+          },
+          "name": {
+            "type": "string"
+          },
+          "price": {
+            "type": "string",
+            "pattern": "^[0-9]+\\.[0-9]{2}$"
+          }
+        }
+      },
+      "UserDraftView": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/DraftSnapshot"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "canConfirm": {
+                "type": "boolean"
+              },
+              "currentTotal": {
+                "type": "string"
+              },
+              "blockingReasons": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "recipientName": {
+                "type": "string",
+                "nullable": true
+              },
+              "recipientPhone": {
+                "type": "string",
+                "nullable": true
+              },
+              "recipientAddress": {
+                "type": "string",
+                "nullable": true
+              },
+              "items": {
+                "type": "array",
+                "items": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/DraftLine"
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "currentPrice": {
+                          "type": "number",
+                          "nullable": true
+                        },
+                        "currentStock": {
+                          "type": "integer"
+                        },
+                        "blockedReason": {
+                          "type": "string",
+                          "nullable": true
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "responses": {
+      "Unauthorized": {
+        "description": "Missing, invalid, expired or revoked delegation / service credential",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            }
+          }
+        }
+      },
+      "Forbidden": {
+        "description": "Credential scope cannot access this route",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            }
+          }
+        }
+      },
+      "NotFound": {
+        "description": "Resource does not exist or belongs to another user",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            }
+          }
+        }
+      }
+    }
+  }
+}

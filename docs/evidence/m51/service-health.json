@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "checks": {
+    "normal": {
+      "environmentMarker": "normal",
+      "frontendStatus": 200,
+      "aiHealthStatus": 200,
+      "protectedOrderStatus": 401
+    },
+    "demo": {
+      "environmentMarker": "demo",
+      "frontendStatus": 200,
+      "aiHealthStatus": 200,
+      "protectedOrderStatus": 401
+    }
+  },
+  "healthIsNotPaymentProof": true
+}

@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "checks": [
+    "design is explicitly not implemented",
+    "six USER-only operations",
+    "all local references resolve",
+    "write DTOs reject client identity and amount",
+    "PIN is a write-only string",
+    "integer quantities and fixed decimal money",
+    "payment capability is separate from USER identity",
+    "late authorizations support scoped revocation",
+    "private success responses prohibit caching",
+    "versioned acceptance vectors are specifications",
+    "migration proposal is additive DDL only",
+    "no automatic migration registration",
+    "source/order and payment/ledger uniqueness",
+    "M4.3 runtime sources unchanged"
+  ],
+  "count": 14,
+  "acceptanceVectors": 15,
+  "mysqlDDLExecuted": false,
+  "paymentExecuted": false,
+  "limitations": "Static contract-specific checks only; full schema validation, MySQL DDL and business tests belong to M5.1-B."
+}

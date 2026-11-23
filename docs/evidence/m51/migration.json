@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "appliedStatements": 0,
+  "target": "DeepseekDoc_M43_Demo",
+  "normalDatabaseChanged": false,
+  "targetFingerprint": "af8da3ee90f09aaa384f6dac3330ab4b17ae80352ff8f6888df700d1dbd57708",
+  "databaseStructureSha256": "dec7870383d3ff233b7128bb2893b83269363b8f01e46d68b928016bc56c163f",
+  "schemaSha256": "fc4b47c0b2dcd47308bf0c04e3290ed8a0d58c5c8f9eef1dd64e1a4ae0060f23",
+  "backupFile": "DeepseekDoc_M43_Demo-20261028-095806-917e10.sql"
+}

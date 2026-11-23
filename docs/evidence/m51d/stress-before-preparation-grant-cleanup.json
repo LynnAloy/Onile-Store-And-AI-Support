@@ -1,0 +1,61 @@
+{
+  "passed": false,
+  "checks": [
+    {
+      "check": "10 concurrent same/different-key requests debit and award points once",
+      "passed": true,
+      "round": 1
+    },
+    {
+      "check": "10 concurrent same/different-key requests debit and award points once",
+      "passed": true,
+      "round": 2
+    },
+    {
+      "check": "10 concurrent same/different-key requests debit and award points once",
+      "passed": true,
+      "round": 3
+    },
+    {
+      "check": "10 concurrent same/different-key requests debit and award points once",
+      "passed": true,
+      "round": 4
+    },
+    {
+      "check": "10 concurrent same/different-key requests debit and award points once",
+      "passed": true,
+      "round": 5
+    },
+    {
+      "check": "Two users compete for last item without oversell or loser debit",
+      "passed": true,
+      "round": 1
+    },
+    {
+      "check": "Two users compete for last item without oversell or loser debit",
+      "passed": true,
+      "round": 2
+    },
+    {
+      "check": "Two users compete for last item without oversell or loser debit",
+      "passed": true,
+      "round": 3
+    },
+    {
+      "check": "Two users compete for last item without oversell or loser debit",
+      "passed": true,
+      "round": 4
+    },
+    {
+      "check": "Two users compete for last item without oversell or loser debit",
+      "passed": true,
+      "round": 5
+    }
+  ],
+  "count": 10,
+  "failure": "RuntimeError: /api/auth/order-agent-token returned HTTP 429",
+  "realHTTP": true,
+  "realMySQL": true,
+  "syntheticOnly": true,
+  "roundsPerConcurrencyCase": 5
+}

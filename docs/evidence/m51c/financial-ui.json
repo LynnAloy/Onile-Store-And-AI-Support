@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "syntheticOnly": true,
+  "confirmedAndVerifiedWithoutDebit": true,
+  "explicitPaymentAmount": "0.40",
+  "stockDecrement": 4,
+  "purchaseLedgers": 1,
+  "paymentRecords": 1,
+  "pointsAwarded": 0,
+  "refreshAndCloseDidNotRepeatDebit": true,
+  "activeAuthorizationsAfterWithdrawal": 0,
+  "normalUIEnabled": false,
+  "demoUIEnabled": true
+}

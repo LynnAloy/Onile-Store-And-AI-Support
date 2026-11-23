@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "tests": 57,
+  "originalTests": 32,
+  "newPaymentTests": 25,
+  "failures": 0,
+  "realMySQL": false
+}

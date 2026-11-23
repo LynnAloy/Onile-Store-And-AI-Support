@@ -1,0 +1,111 @@
+{
+  "cases": [
+    {
+      "query": "怎么授权身高体重用于个性化建议？",
+      "expectedDocuments": [
+        "platform-personalization"
+      ],
+      "retrievedDocuments": [
+        "platform-personalization",
+        "platform-scope"
+      ],
+      "passed": true,
+      "mrr": 1.0
+    },
+    {
+      "query": "取消健康档案授权以后历史聊天会删除吗？",
+      "expectedDocuments": [
+        "platform-personalization"
+      ],
+      "retrievedDocuments": [
+        "platform-personalization",
+        "platform-orders"
+      ],
+      "passed": true,
+      "mrr": 1.0
+    },
+    {
+      "query": "支付密码错误五次会怎样？",
+      "expectedDocuments": [
+        "platform-wallet"
+      ],
+      "retrievedDocuments": [
+        "platform-wallet",
+        "platform-orders"
+      ],
+      "passed": true,
+      "mrr": 1.0
+    },
+    {
+      "query": "演示钱包是银行卡真实支付吗？",
+      "expectedDocuments": [
+        "platform-wallet"
+      ],
+      "retrievedDocuments": [
+        "platform-wallet",
+        "platform-orders"
+      ],
+      "passed": true,
+      "mrr": 1.0
+    },
+    {
+      "query": "重复提交同一个订单会重复扣款吗？",
+      "expectedDocuments": [
+        "platform-orders"
+      ],
+      "retrievedDocuments": [
+        "platform-orders",
+        "platform-wallet"
+      ],
+      "passed": true,
+      "mrr": 1.0
+    },
+    {
+      "query": "知识库价格可以代替实时库存查询吗？",
+      "expectedDocuments": [
+        "platform-orders"
+      ],
+      "retrievedDocuments": [
+        "platform-orders",
+        "platform-scope"
+      ],
+      "passed": true,
+      "mrr": 1.0
+    },
+    {
+      "query": "待审核的医学资料能用于回答吗？",
+      "expectedDocuments": [
+        "platform-scope"
+      ],
+      "retrievedDocuments": [
+        "platform-scope",
+        "platform-personalization",
+        "platform-orders"
+      ],
+      "passed": true,
+      "mrr": 1.0
+    },
+    {
+      "query": "HyDE生成的假设文档能作为引用来源吗？",
+      "expectedDocuments": [
+        "platform-scope"
+      ],
+      "retrievedDocuments": [
+        "platform-scope",
+        "platform-orders"
+      ],
+      "passed": true,
+      "mrr": 1.0
+    },
+    {
+      "query": "太阳系木星卫星的公转周期是多少？",
+      "expectedDocuments": [],
+      "retrievedDocuments": [],
+      "passed": true,
+      "mrr": 0
+    }
+  ],
+  "passed": true,
+  "hitRate": 1.0,
+  "mrr": 1.0
+}

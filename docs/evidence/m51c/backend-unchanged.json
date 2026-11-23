@@ -1,0 +1,7 @@
+{
+  "passed": true,
+  "comparedWith": "M5.1-B release manifest",
+  "sourceFilesChecked": 91,
+  "javaAndPythonRuntimeSourcesUnchanged": true,
+  "javaJarUnchanged": true
+}

@@ -1,0 +1,51 @@
+{
+  "passed": true,
+  "javaTests": 17,
+  "pythonTests": 85,
+  "frontendTests": 64,
+  "frontendBuild": true,
+  "browserChecklistOpenAndQuantityEdit": true,
+  "browserAdminModelConfigSaved": true,
+  "realModelAfterConfigSave": true,
+  "anonymousAndAgentConfigAccessDenied": true,
+  "protocol": "ollama",
+  "financialActionsPerformed": false,
+  "artifacts": [
+    {
+      "path": "DeepseekDoc/src/components/views/Home.vue",
+      "sha256": "26806be3dc8750a16b971ac832a5d684d33c6d2e93060a5c78eee87b5d4f4c5b"
+    },
+    {
+      "path": "DeepseekDoc/src/components/views/AdminAIConfig.vue",
+      "sha256": "602d61ecc091572bc9e6f2580c4123cc3e8819afa873faa3cb00adbdf887f243"
+    },
+    {
+      "path": "DeepseekDoc/src/components/views/Menu.vue",
+      "sha256": "a854df71f9606e029dddd567d7718660de9326be98198ec9530714f93c45b8db"
+    },
+    {
+      "path": "DeepseekDoc/src/services/commerceClient.mjs",
+      "sha256": "7313d2199472b52fbe6040d8f1595eed3457f6c9e4f9a613c3257b20bf731e67"
+    },
+    {
+      "path": "DeepseekDoc/src/router/config.js",
+      "sha256": "29cd265fbac0ad16707abd1aa3bae857f81a7d55c201658fe20c048b49d1b7b1"
+    },
+    {
+      "path": "python-ai/app/runtime_model.py",
+      "sha256": "bd5224a4f1befd84a758d7ddde172369dbbeb2bc2dfbefdc7fcc842d0d527253"
+    },
+    {
+      "path": "python-ai/app/main.py",
+      "sha256": "51b3bc08f52fe041e5099b4b2fd1b44f619806aacec630a70f3f194b5bab3a21"
+    },
+    {
+      "path": "scripts/local_stack.py",
+      "sha256": "13f7963b14c7d744f31eed190fa5f9debd2690d867e571db5fefcfc51178fd00"
+    },
+    {
+      "path": "mybatis-plus-demo/mybatis-plus-demo/src/main/java/com/example/mybatisplus/controller/ModelConfigController.java",
+      "sha256": "9801071ef547e19d6a8f5f0060c614434fe7f6bc738985ebe8b70828e87a3bf2"
+    }
+  ]
+}

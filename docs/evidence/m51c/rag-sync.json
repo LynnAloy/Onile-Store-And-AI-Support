@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "publicPlatformRulesOnly": true,
+  "indices": {
+    ".local-run": {
+      "revision": 5,
+      "platformOrders": "1.4",
+      "platformWallet": "1.1"
+    },
+    ".local-demo": {
+      "revision": 2,
+      "platformOrders": "1.4",
+      "platformWallet": "1.1"
+    }
+  }
+}

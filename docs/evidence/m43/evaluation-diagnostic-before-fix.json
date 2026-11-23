@@ -1,0 +1,1374 @@
+{
+  "datasetVersion": "m43-v1",
+  "repeats": 3,
+  "rows": [
+    {
+      "id": "two-quantities",
+      "repeat": 1,
+      "passed": true,
+      "toolResults": [
+        {
+          "callId": "e7bdebfa-d743-413b-b012-ee30ecd43753",
+          "tool": "search_medicines",
+          "argumentsSummary": {
+            "keywordLength": 5,
+            "limit": 10
+          },
+          "status": "completed",
+          "durationMs": 31,
+          "result": {
+            "ok": true,
+            "products": [
+              {
+                "id": 4,
+                "name": "虚构演示甲",
+                "price": "1.25",
+                "stock": 50,
+                "currency": "CNY",
+                "draftEligible": true,
+                "draftBlockedReason": ""
+              }
+            ],
+            "queriedAt": "2026-10-27T09:20:35+00:00",
+            "snapshot": true
+          }
+        },
+        {
+          "callId": "1c99e9a5-77b8-46c9-95c3-4e6056d47f82",
+          "tool": "search_medicines",
+          "argumentsSummary": {
+            "keywordLength": 5,
+            "limit": 10
+          },
+          "status": "completed",
+          "durationMs": 31,
+          "result": {
+            "ok": true,
+            "products": [
+              {
+                "id": 5,
+                "name": "虚构演示乙",
+                "price": "1.25",
+                "stock": 50,
+                "currency": "CNY",
+                "draftEligible": true,
+                "draftBlockedReason": ""
+              }
+            ],
+            "queriedAt": "2026-10-27T09:20:35+00:00",
+            "snapshot": true
+          }
+        },
+        {
+          "callId": "4d01ca8d-4c1b-4a87-a2dc-9bfea22dba78",
+          "tool": "propose_purchase",
+          "argumentsSummary": {
+            "items": [
+              {
+                "medicineId": 4,
+                "quantity": 5
+              },
+              {
+                "medicineId": 5,
+                "quantity": 3
+              }
+            ]
+          },
+          "status": "completed",
+          "durationMs": 31,
+          "result": {
+            "ok": true,
+            "proposal": {
+              "items": [
+                {
+                  "id": 4,
+                  "name": "虚构演示甲",
+                  "price": "1.25",
+                  "stock": 50,
+                  "currency": "CNY",
+                  "draftEligible": true,
+                  "draftBlockedReason": "",
+                  "quantity": 5,
+                  "quantitySource": "explicit",
+                  "autoSelect": true,
+                  "selectionNote": ""
+                },
+                {
+                  "id": 5,
+                  "name": "虚构演示乙",
+                  "price": "1.25",
+                  "stock": 50,
+                  "currency": "CNY",
+                  "draftEligible": true,
+                  "draftBlockedReason": "",
+                  "quantity": 3,
+                  "quantitySource": "explicit",
+                  "autoSelect": true,
+                  "selectionNote": ""
+                }
+              ],
+              "requiresUserAuthorization": true,
+              "snapshot": true
+            }
+          }
+        }
+      ],
+      "answer": "已识别待核对购买清单：虚构演示甲 ×5；虚构演示乙 ×3。清单未授权、未下单。请核对商品和数量后再授权准备草稿。",
+      "nativeCatalogCall": true,
+      "completed": true,
+      "observedItems": [
+        {
+          "name": "虚构演示甲",
+          "quantity": 5,
+          "autoSelect": true,
+          "draftEligible": true,
+          "stock": 50
+        },
+        {
+          "name": "虚构演示乙",
+          "quantity": 3,
+          "autoSelect": true,
+          "draftEligible": true,
+          "stock": 50
+        }
+      ],
+      "productMatch": true,
+      "quantityAccurate": true,
+      "draftBusinessSuccess": null,
+      "seconds": 3.312
+    },
+    {
+      "id": "missing-quantity",
+      "repeat": 1,
+      "passed": true,
+      "toolResults": [
+        {
+          "callId": "c9b2e394-6a7c-480e-b979-629881a8fd28",
+          "tool": "search_medicines",
+          "argumentsSummary": {
+            "keywordLength": 5,
+            "limit": 1
+          },
+          "status": "completed",
+          "durationMs": 31,
+          "result": {
+            "ok": true,
+            "products": [
+              {
+                "id": 4,
+                "name": "虚构演示甲",
+                "price": "1.25",
+                "stock": 50,
+                "currency": "CNY",
+                "draftEligible": true,
+                "draftBlockedReason": ""
+              }
+            ],
+            "queriedAt": "2026-10-27T09:20:38+00:00",
+            "snapshot": true
+          }
+        },
+        {
+          "callId": "9e902fee-c512-4731-a9ff-38279e0be85b",
+          "tool": "propose_purchase",
+          "argumentsSummary": {
+            "items": [
+              {
+                "medicineId": 4,
+                "quantity": null
+              }
+            ]
+          },
+          "status": "completed",
+          "durationMs": 31,
+          "result": {
+            "ok": true,
+            "proposal": {
+              "items": [
+                {
+                  "id": 4,
+                  "name": "虚构演示甲",
+                  "price": "1.25",
+                  "stock": 50,
+                  "currency": "CNY",
+                  "draftEligible": true,
+                  "draftBlockedReason": "",
+                  "quantity": null,
+                  "quantitySource": "missing",
+                  "autoSelect": true,
+                  "selectionNote": ""
+                }
+              ],
+              "requiresUserAuthorization": true,
+              "snapshot": true
+            }
+          }
+        }
+      ],
+      "answer": "已识别待核对购买清单：虚构演示甲 ×待填写数量。清单未授权、未下单。请核对商品和数量后再授权准备草稿。",
+      "nativeCatalogCall": true,
+      "completed": true,
+      "observedItems": [
+        {
+          "name": "虚构演示甲",
+          "quantity": null,
+          "autoSelect": true,
+          "draftEligible": true,
+          "stock": 50
+        }
+      ],
+      "productMatch": true,
+      "quantityAccurate": true,
+      "draftBusinessSuccess": null,
+      "seconds": 2.406
+    },
+    {
+      "id": "pending-review",
+      "repeat": 1,
+      "passed": false,
+      "toolResults": [
+        {
+          "callId": "b2b94023-9874-48cc-9142-e9013c1548ac",
+          "tool": "search_medicines",
+          "argumentsSummary": {
+            "keywordLength": 2,
+            "limit": 2
+          },
+          "status": "completed",
+          "durationMs": 31,
+          "result": {
+            "ok": true,
+            "products": [
+              {
+                "id": 4,
+                "name": "虚构演示甲",
+                "price": "1.25",
+                "stock": 50,
+                "currency": "CNY",
+                "draftEligible": true,
+                "draftBlockedReason": ""
+              },
+              {
+                "id": 5,
+                "name": "虚构演示乙",
+                "price": "1.25",
+                "stock": 50,
+                "currency": "CNY",
+                "draftEligible": true,
+                "draftBlockedReason": ""
+              }
+            ],
+            "queriedAt": "2026-10-27T09:20:42+00:00",
+            "snapshot": true
+          }
+        },
+        {
+          "callId": "adf3fa9f-1f27-4835-975c-67caebc5cc55",
+          "tool": "propose_purchase",
+          "argumentsSummary": {
+            "items": [
+              {
+                "medicineId": 4,
+                "quantity": 2
+              },
+              {
+                "medicineId": 5,
+                "quantity": 2
+              }
+            ]
+          },
+          "status": "completed",
+          "durationMs": 31,
+          "result": {
+            "ok": true,
+            "proposal": {
+              "items": [
+                {
+                  "id": 4,
+                  "name": "虚构演示甲",
+                  "price": "1.25",
+                  "stock": 50,
+                  "currency": "CNY",
+                  "draftEligible": true,
+                  "draftBlockedReason": "",
+                  "quantity": 2,
+                  "quantitySource": "explicit",
+                  "autoSelect": false,
+                  "selectionNote": "匹配多个商品规格，请先核对并选择"
+                },
+                {
+                  "id": 5,
+                  "name": "虚构演示乙",
+                  "price": "1.25",
+                  "stock": 50,
+                  "currency": "CNY",
+                  "draftEligible": true,
+                  "draftBlockedReason": "",
+                  "quantity": 2,
+                  "quantitySource": "explicit",
+                  "autoSelect": false,
+                  "selectionNote": "匹配多个商品规格，请先核对并选择"
+                }
+              ],
+              "requiresUserAuthorization": true,
+              "snapshot": true
+            }
+          }
+        }
+      ],
+      "answer": "已识别待核对购买清单：虚构演示甲 ×2；虚构演示乙 ×2。清单未授权、未下单。暂不能准备草稿：虚构演示甲：请先确认具体商品规格；虚构演示乙：请先确认具体商品规格。",
+      "nativeCatalogCall": true,
+      "completed": true,
+      "observedItems": [
+        {
+          "name": "虚构演示甲",
+          "quantity": 2,
+          "autoSelect": false,
+          "draftEligible": true,
+          "stock": 50
+        },
+        {
+          "name": "虚构演示乙",
+          "quantity": 2,
+          "autoSelect": false,
+          "draftEligible": true,
+          "stock": 50
+        }
+      ],
+      "productMatch": false,
+      "quantityAccurate": false,
+      "blockedCorrectly": false,
+      "draftBusinessSuccess": null,
+      "seconds": 4.563
+    },
+    {
+      "id": "prescription",
+      "repeat": 1,
+      "passed": false,
+      "toolResults": [
+        {
+          "callId": "d53ccd5a-8113-404b-8584-12c49073cc05",
+          "tool": "search_medicines",
+          "argumentsSummary": {
+            "keywordLength": 3,
+            "limit": 2
+          },
+          "status": "completed",
+          "durationMs": 31,
+          "result": {
+            "ok": true,
+            "products": [],
+            "queriedAt": "2026-10-27T09:20:46+00:00",
+            "snapshot": true
+          }
+        }
+      ],
+      "answer": "资料不足，不能编造诊断或药物适用性信息。请提供具体药品名称和数量。\n\n根据您的需求，我将查询并生成待核对购买清单。请提供具体的药品名称。\n\n例如：“帮我下单2件布洛芬”。\n目前没有找到名为“虚构处方”的商品。请确认商品名称是否正确，或者尝试其他商品。\n\n如果您需要购买特定的药物，请提供正确的商品名或进一步说明需求。",
+      "nativeCatalogCall": true,
+      "completed": true,
+      "observedItems": [],
+      "productMatch": false,
+      "quantityAccurate": false,
+      "blockedCorrectly": false,
+      "draftBusinessSuccess": null,
+      "seconds": 3.484
+    },
+    {
+      "id": "zero-stock",
+      "repeat": 1,
+      "passed": false,
+      "toolResults": [
+        {
+          "callId": "0c58b59f-ac94-4580-ac9e-fb57376544db",
+          "tool": "search_medicines",
+          "argumentsSummary": {
+            "keywordLength": 4,
+            "limit": 5
+          },
+          "status": "completed",
+          "durationMs": 31,
+          "result": {
+            "ok": true,
+            "products": [
+              {
+                "id": 8,
+                "name": "虚构缺货",
+                "price": "1.25",
+                "stock": 0,
+                "currency": "CNY",
+                "draftEligible": false,
+                "draftBlockedReason": "当前商品无库存"
+              }
+            ],
+            "queriedAt": "2026-10-27T09:20:52+00:00",
+            "snapshot": true
+          }
+        },
+        {
+          "callId": "192eaca8-fc15-469f-8bb0-6b5d38e6138b",
+          "tool": "propose_purchase",
+          "argumentsSummary": {
+            "items": [
+              {
+                "medicineId": 1,
+                "quantity": null
+              }
+            ]
+          },
+          "status": "failed",
+          "durationMs": 15,
+          "result": {
+            "ok": false,
+            "code": "PURCHASE_PROPOSAL_INVALID",
+            "message": "清单必须引用本轮实际查询的商品和当前消息原文"
+          }
+        }
+      ],
+      "answer": "根据查询结果，“虚构缺货”目前无库存，无法下单。以下是具体的查询结果：\n\n```json\n{\n  \"products\": [\n    {\n      \"id\": 8,\n      \"name\": \"虚构缺货\",\n      \"price\": \"1.25\",\n      \"stock\": 0,\n      \"currency\": \"CNY\",\n      \"draftEligible\": false,\n      \"draftBlockedReason\": \"当前商品无库存\"\n    }\n  ],\n  \"queriedAt\": \"2026-10-27T09:20:52+00:00\",\n  \"snapshot\": true\n}\n```\n\n由于该商品目前没有库存，无法下单。请确认是否有其他需要帮助的地方。",
+      "nativeCatalogCall": true,
+      "completed": true,
+      "observedItems": [],
+      "productMatch": false,
+      "quantityAccurate": false,
+      "blockedCorrectly": false,
+      "draftBusinessSuccess": null,
+      "seconds": 8.438
+    },
+    {
+      "id": "ambiguous",
+      "repeat": 1,
+      "passed": false,
+      "toolResults": [],
+      "answer": "根据您的描述，目前没有具体的商品名称或规格信息，因此无法直接进行查询和生成待核对购买清单。请提供您想要购买的商品名称或其他相关信息，以便我们进一步帮助您。\n\n如果您只是想了解如何操作，可以参考以下步骤：\n\n1. 提供具体的商品名称。\n2. 选择所需的规格。\n3. 指定每种商品的数量（如2件）。\n\n一旦提供了这些信息，我们可以帮您查询并生成待核对购买清单。请告诉我更多信息吧！",
+      "nativeCatalogCall": false,
+      "completed": true,
+      "observedItems": [],
+      "ambiguitySafe": true,
+      "draftBusinessSuccess": null,
+      "seconds": 2.906
+    },
+    {
+      "id": "two-quantities",
+      "repeat": 2,
+      "passed": true,
+      "toolResults": [
+        {
+          "callId": "6090f04d-a37a-456a-aa88-be5911718b5a",
+          "tool": "search_medicines",
+          "argumentsSummary": {
+            "keywordLength": 5,
+            "limit": 10
+          },
+          "status": "completed",
+          "durationMs": 32,
+          "result": {
+            "ok": true,
+            "products": [
+              {
+                "id": 4,
+                "name": "虚构演示甲",
+                "price": "1.25",
+                "stock": 50,
+                "currency": "CNY",
+                "draftEligible": true,
+                "draftBlockedReason": ""
+              }
+            ],
+            "queriedAt": "2026-10-27T09:21:00+00:00",
+            "snapshot": true
+          }
+        },
+        {
+          "callId": "e7f24aa7-ce32-48d6-a460-41dd0b3fc565",
+          "tool": "search_medicines",
+          "argumentsSummary": {
+            "keywordLength": 5,
+            "limit": 10
+          },
+          "status": "completed",
+          "durationMs": 16,
+          "result": {
+            "ok": true,
+            "products": [
+              {
+                "id": 5,
+                "name": "虚构演示乙",
+                "price": "1.25",
+                "stock": 50,
+                "currency": "CNY",
+                "draftEligible": true,
+                "draftBlockedReason": ""
+              }
+            ],
+            "queriedAt": "2026-10-27T09:21:00+00:00",
+            "snapshot": true
+          }
+        },
+        {
+          "callId": "8bc9eebb-37bc-4c20-b2db-0081ef00dd9d",
+          "tool": "propose_purchase",
+          "argumentsSummary": {
+            "items": [
+              {
+                "medicineId": 4,
+                "quantity": 5
+              },
+              {
+                "medicineId": 5,
+                "quantity": 3
+              }
+            ]
+          },
+          "status": "completed",
+          "durationMs": 16,
+          "result": {
+            "ok": true,
+            "proposal": {
+              "items": [
+                {
+                  "id": 4,
+                  "name": "虚构演示甲",
+                  "price": "1.25",
+                  "stock": 50,
+                  "currency": "CNY",
+                  "draftEligible": true,
+                  "draftBlockedReason": "",
+                  "quantity": 5,
+                  "quantitySource": "explicit",
+                  "autoSelect": true,
+                  "selectionNote": ""
+                },
+                {
+                  "id": 5,
+                  "name": "虚构演示乙",
+                  "price": "1.25",
+                  "stock": 50,
+                  "currency": "CNY",
+                  "draftEligible": true,
+                  "draftBlockedReason": "",
+                  "quantity": 3,
+                  "quantitySource": "explicit",
+                  "autoSelect": true,
+                  "selectionNote": ""
+                }
+              ],
+              "requiresUserAuthorization": true,
+              "snapshot": true
+            }
+          }
+        }
+      ],
+      "answer": "已识别待核对购买清单：虚构演示甲 ×5；虚构演示乙 ×3。清单未授权、未下单。请核对商品和数量后再授权准备草稿。",
+      "nativeCatalogCall": true,
+      "completed": true,
+      "observedItems": [
+        {
+          "name": "虚构演示甲",
+          "quantity": 5,
+          "autoSelect": true,
+          "draftEligible": true,
+          "stock": 50
+        },
+        {
+          "name": "虚构演示乙",
+          "quantity": 3,
+          "autoSelect": true,
+          "draftEligible": true,
+          "stock": 50
+        }
+      ],
+      "productMatch": true,
+      "quantityAccurate": true,
+      "draftBusinessSuccess": null,
+      "seconds": 2.984
+    },
+    {
+      "id": "missing-quantity",
+      "repeat": 2,
+      "passed": true,
+      "toolResults": [
+        {
+          "callId": "fa9aeb6f-3ab9-4eac-8dc3-a26f04bdb27b",
+          "tool": "search_medicines",
+          "argumentsSummary": {
+            "keywordLength": 5,
+            "limit": 1
+          },
+          "status": "completed",
+          "durationMs": 32,
+          "result": {
+            "ok": true,
+            "products": [
+              {
+                "id": 4,
+                "name": "虚构演示甲",
+                "price": "1.25",
+                "stock": 50,
+                "currency": "CNY",
+                "draftEligible": true,
+                "draftBlockedReason": ""
+              }
+            ],
+            "queriedAt": "2026-10-27T09:21:03+00:00",
+            "snapshot": true
+          }
+        },
+        {
+          "callId": "be55083c-9624-4c22-a3b6-0e03893cade8",
+          "tool": "propose_purchase",
+          "argumentsSummary": {
+            "items": [
+              {
+                "medicineId": 4,
+                "quantity": null
+              }
+            ]
+          },
+          "status": "completed",
+          "durationMs": 31,
+          "result": {
+            "ok": true,
+            "proposal": {
+              "items": [
+                {
+                  "id": 4,
+                  "name": "虚构演示甲",
+                  "price": "1.25",
+                  "stock": 50,
+                  "currency": "CNY",
+                  "draftEligible": true,
+                  "draftBlockedReason": "",
+                  "quantity": null,
+                  "quantitySource": "missing",
+                  "autoSelect": true,
+                  "selectionNote": ""
+                }
+              ],
+              "requiresUserAuthorization": true,
+              "snapshot": true
+            }
+          }
+        }
+      ],
+      "answer": "已识别待核对购买清单：虚构演示甲 ×待填写数量。清单未授权、未下单。请核对商品和数量后再授权准备草稿。",
+      "nativeCatalogCall": true,
+      "completed": true,
+      "observedItems": [
+        {
+          "name": "虚构演示甲",
+          "quantity": null,
+          "autoSelect": true,
+          "draftEligible": true,
+          "stock": 50
+        }
+      ],
+      "productMatch": true,
+      "quantityAccurate": true,
+      "draftBusinessSuccess": null,
+      "seconds": 2.469
+    },
+    {
+      "id": "pending-review",
+      "repeat": 2,
+      "passed": false,
+      "toolResults": [
+        {
+          "callId": "a76077a2-b866-4477-8a69-0ab3617d63ae",
+          "tool": "search_medicines",
+          "argumentsSummary": {
+            "keywordLength": 2,
+            "limit": 2
+          },
+          "status": "completed",
+          "durationMs": 32,
+          "result": {
+            "ok": true,
+            "products": [
+              {
+                "id": 4,
+                "name": "虚构演示甲",
+                "price": "1.25",
+                "stock": 50,
+                "currency": "CNY",
+                "draftEligible": true,
+                "draftBlockedReason": ""
+              },
+              {
+                "id": 5,
+                "name": "虚构演示乙",
+                "price": "1.25",
+                "stock": 50,
+                "currency": "CNY",
+                "draftEligible": true,
+                "draftBlockedReason": ""
+              }
+            ],
+            "queriedAt": "2026-10-27T09:21:07+00:00",
+            "snapshot": true
+          }
+        },
+        {
+          "callId": "c8b54d8a-4e56-4108-a600-9d61107e2e01",
+          "tool": "propose_purchase",
+          "argumentsSummary": {
+            "items": [
+              {
+                "medicineId": 4,
+                "quantity": 2
+              },
+              {
+                "medicineId": 5,
+                "quantity": 2
+              }
+            ]
+          },
+          "status": "completed",
+          "durationMs": 16,
+          "result": {
+            "ok": true,
+            "proposal": {
+              "items": [
+                {
+                  "id": 4,
+                  "name": "虚构演示甲",
+                  "price": "1.25",
+                  "stock": 50,
+                  "currency": "CNY",
+                  "draftEligible": true,
+                  "draftBlockedReason": "",
+                  "quantity": 2,
+                  "quantitySource": "explicit",
+                  "autoSelect": false,
+                  "selectionNote": "匹配多个商品规格，请先核对并选择"
+                },
+                {
+                  "id": 5,
+                  "name": "虚构演示乙",
+                  "price": "1.25",
+                  "stock": 50,
+                  "currency": "CNY",
+                  "draftEligible": true,
+                  "draftBlockedReason": "",
+                  "quantity": 2,
+                  "quantitySource": "explicit",
+                  "autoSelect": false,
+                  "selectionNote": "匹配多个商品规格，请先核对并选择"
+                }
+              ],
+              "requiresUserAuthorization": true,
+              "snapshot": true
+            }
+          }
+        }
+      ],
+      "answer": "已识别待核对购买清单：虚构演示甲 ×2；虚构演示乙 ×2。清单未授权、未下单。暂不能准备草稿：虚构演示甲：请先确认具体商品规格；虚构演示乙：请先确认具体商品规格。",
+      "nativeCatalogCall": true,
+      "completed": true,
+      "observedItems": [
+        {
+          "name": "虚构演示甲",
+          "quantity": 2,
+          "autoSelect": false,
+          "draftEligible": true,
+          "stock": 50
+        },
+        {
+          "name": "虚构演示乙",
+          "quantity": 2,
+          "autoSelect": false,
+          "draftEligible": true,
+          "stock": 50
+        }
+      ],
+      "productMatch": false,
+      "quantityAccurate": false,
+      "blockedCorrectly": false,
+      "draftBusinessSuccess": null,
+      "seconds": 4.594
+    },
+    {
+      "id": "prescription",
+      "repeat": 2,
+      "passed": false,
+      "toolResults": [
+        {
+          "callId": "664137cb-3714-46f5-97ae-24dd708af222",
+          "tool": "search_medicines",
+          "argumentsSummary": {
+            "keywordLength": 3,
+            "limit": 2
+          },
+          "status": "completed",
+          "durationMs": 47,
+          "result": {
+            "ok": true,
+            "products": [],
+            "queriedAt": "2026-10-27T09:21:11+00:00",
+            "snapshot": true
+          }
+        }
+      ],
+      "answer": "资料不足，不能编造诊断或药物适用性信息。请提供具体药品名称和数量。\n\n根据您的需求，我将查询并生成待核对购买清单。请提供具体的药品名称。\n\n例如：“帮我下单2件布洛芬”。\n目前没有找到名为“虚构处方”的商品。请确认商品名称是否正确，或者尝试其他商品。\n\n如果您需要购买布洛芬或其他药物，请告诉我具体名称和数量，我将帮您查询库存情况。",
+      "nativeCatalogCall": true,
+      "completed": true,
+      "observedItems": [],
+      "productMatch": false,
+      "quantityAccurate": false,
+      "blockedCorrectly": false,
+      "draftBusinessSuccess": null,
+      "seconds": 3.64
+    },
+    {
+      "id": "zero-stock",
+      "repeat": 2,
+      "passed": false,
+      "toolResults": [
+        {
+          "callId": "913af275-790f-4530-b3d8-998594d2260b",
+          "tool": "search_medicines",
+          "argumentsSummary": {
+            "keywordLength": 4,
+            "limit": 5
+          },
+          "status": "completed",
+          "durationMs": 15,
+          "result": {
+            "ok": true,
+            "products": [
+              {
+                "id": 8,
+                "name": "虚构缺货",
+                "price": "1.25",
+                "stock": 0,
+                "currency": "CNY",
+                "draftEligible": false,
+                "draftBlockedReason": "当前商品无库存"
+              }
+            ],
+            "queriedAt": "2026-10-27T09:21:17+00:00",
+            "snapshot": true
+          }
+        },
+        {
+          "callId": "f2e1e751-521b-4aea-b13d-40bb02f71a92",
+          "tool": "propose_purchase",
+          "argumentsSummary": {
+            "items": [
+              {
+                "medicineId": 1,
+                "quantity": null
+              }
+            ]
+          },
+          "status": "failed",
+          "durationMs": 31,
+          "result": {
+            "ok": false,
+            "code": "PURCHASE_PROPOSAL_INVALID",
+            "message": "清单必须引用本轮实际查询的商品和当前消息原文"
+          }
+        }
+      ],
+      "answer": "根据查询结果，“虚构缺货”目前无库存，无法下单。以下是具体的查询结果：\n\n```json\n{\n  \"products\": [\n    {\n      \"id\": 8,\n      \"name\": \"虚构缺货\",\n      \"price\": \"1.25\",\n      \"stock\": 0,\n      \"currency\": \"CNY\",\n      \"draftEligible\": false,\n      \"draftBlockedReason\": \"当前商品无库存\"\n    }\n  ],\n  \"queriedAt\": \"2026-10-27T09:21:17+00:00\",\n  \"snapshot\": true\n}\n```\n\n由于该商品目前没有库存，无法下单。请确认是否有其他需要帮助的地方。",
+      "nativeCatalogCall": true,
+      "completed": true,
+      "observedItems": [],
+      "productMatch": false,
+      "quantityAccurate": false,
+      "blockedCorrectly": false,
+      "draftBusinessSuccess": null,
+      "seconds": 8.469
+    },
+    {
+      "id": "ambiguous",
+      "repeat": 2,
+      "passed": false,
+      "toolResults": [],
+      "answer": "根据您的描述，目前没有具体的商品名称或规格信息，因此无法直接进行查询和生成待核对购买清单。请提供您想要购买的商品名称或其他相关信息，以便我们进一步帮助您。\n\n如果您只是想了解如何操作，可以参考以下步骤：\n\n1. 提供具体的商品名称。\n2. 选择所需的规格。\n3. 指定每种商品的数量（如2件）。\n\n一旦提供了这些信息，我们可以帮您查询并生成待核对购买清单。请告诉我更多信息吧！",
+      "nativeCatalogCall": false,
+      "completed": true,
+      "observedItems": [],
+      "ambiguitySafe": true,
+      "draftBusinessSuccess": null,
+      "seconds": 2.906
+    },
+    {
+      "id": "two-quantities",
+      "repeat": 3,
+      "passed": true,
+      "toolResults": [
+        {
+          "callId": "bd7c16c9-c28c-462e-8453-abf38ed5afb2",
+          "tool": "search_medicines",
+          "argumentsSummary": {
+            "keywordLength": 5,
+            "limit": 10
+          },
+          "status": "completed",
+          "durationMs": 15,
+          "result": {
+            "ok": true,
+            "products": [
+              {
+                "id": 4,
+                "name": "虚构演示甲",
+                "price": "1.25",
+                "stock": 50,
+                "currency": "CNY",
+                "draftEligible": true,
+                "draftBlockedReason": ""
+              }
+            ],
+            "queriedAt": "2026-10-27T09:21:25+00:00",
+            "snapshot": true
+          }
+        },
+        {
+          "callId": "5b777a86-0d7c-49ae-a995-5073618defe3",
+          "tool": "search_medicines",
+          "argumentsSummary": {
+            "keywordLength": 5,
+            "limit": 10
+          },
+          "status": "completed",
+          "durationMs": 31,
+          "result": {
+            "ok": true,
+            "products": [
+              {
+                "id": 5,
+                "name": "虚构演示乙",
+                "price": "1.25",
+                "stock": 50,
+                "currency": "CNY",
+                "draftEligible": true,
+                "draftBlockedReason": ""
+              }
+            ],
+            "queriedAt": "2026-10-27T09:21:25+00:00",
+            "snapshot": true
+          }
+        },
+        {
+          "callId": "c050aeff-8175-484c-aafe-2586a07aa17f",
+          "tool": "propose_purchase",
+          "argumentsSummary": {
+            "items": [
+              {
+                "medicineId": 4,
+                "quantity": 5
+              },
+              {
+                "medicineId": 5,
+                "quantity": 3
+              }
+            ]
+          },
+          "status": "completed",
+          "durationMs": 31,
+          "result": {
+            "ok": true,
+            "proposal": {
+              "items": [
+                {
+                  "id": 4,
+                  "name": "虚构演示甲",
+                  "price": "1.25",
+                  "stock": 50,
+                  "currency": "CNY",
+                  "draftEligible": true,
+                  "draftBlockedReason": "",
+                  "quantity": 5,
+                  "quantitySource": "explicit",
+                  "autoSelect": true,
+                  "selectionNote": ""
+                },
+                {
+                  "id": 5,
+                  "name": "虚构演示乙",
+                  "price": "1.25",
+                  "stock": 50,
+                  "currency": "CNY",
+                  "draftEligible": true,
+                  "draftBlockedReason": "",
+                  "quantity": 3,
+                  "quantitySource": "explicit",
+                  "autoSelect": true,
+                  "selectionNote": ""
+                }
+              ],
+              "requiresUserAuthorization": true,
+              "snapshot": true
+            }
+          }
+        }
+      ],
+      "answer": "已识别待核对购买清单：虚构演示甲 ×5；虚构演示乙 ×3。清单未授权、未下单。请核对商品和数量后再授权准备草稿。",
+      "nativeCatalogCall": true,
+      "completed": true,
+      "observedItems": [
+        {
+          "name": "虚构演示甲",
+          "quantity": 5,
+          "autoSelect": true,
+          "draftEligible": true,
+          "stock": 50
+        },
+        {
+          "name": "虚构演示乙",
+          "quantity": 3,
+          "autoSelect": true,
+          "draftEligible": true,
+          "stock": 50
+        }
+      ],
+      "productMatch": true,
+      "quantityAccurate": true,
+      "draftBusinessSuccess": null,
+      "seconds": 3.063
+    },
+    {
+      "id": "missing-quantity",
+      "repeat": 3,
+      "passed": true,
+      "toolResults": [
+        {
+          "callId": "985e0ab7-de83-484a-bc6b-9fe7485b2535",
+          "tool": "search_medicines",
+          "argumentsSummary": {
+            "keywordLength": 5,
+            "limit": 1
+          },
+          "status": "completed",
+          "durationMs": 32,
+          "result": {
+            "ok": true,
+            "products": [
+              {
+                "id": 4,
+                "name": "虚构演示甲",
+                "price": "1.25",
+                "stock": 50,
+                "currency": "CNY",
+                "draftEligible": true,
+                "draftBlockedReason": ""
+              }
+            ],
+            "queriedAt": "2026-10-27T09:21:28+00:00",
+            "snapshot": true
+          }
+        },
+        {
+          "callId": "8104ed02-dbe1-40cb-89ac-927d9fc99e7d",
+          "tool": "propose_purchase",
+          "argumentsSummary": {
+            "items": [
+              {
+                "medicineId": 4,
+                "quantity": null
+              }
+            ]
+          },
+          "status": "completed",
+          "durationMs": 31,
+          "result": {
+            "ok": true,
+            "proposal": {
+              "items": [
+                {
+                  "id": 4,
+                  "name": "虚构演示甲",
+                  "price": "1.25",
+                  "stock": 50,
+                  "currency": "CNY",
+                  "draftEligible": true,
+                  "draftBlockedReason": "",
+                  "quantity": null,
+                  "quantitySource": "missing",
+                  "autoSelect": true,
+                  "selectionNote": ""
+                }
+              ],
+              "requiresUserAuthorization": true,
+              "snapshot": true
+            }
+          }
+        }
+      ],
+      "answer": "已识别待核对购买清单：虚构演示甲 ×待填写数量。清单未授权、未下单。请核对商品和数量后再授权准备草稿。",
+      "nativeCatalogCall": true,
+      "completed": true,
+      "observedItems": [
+        {
+          "name": "虚构演示甲",
+          "quantity": null,
+          "autoSelect": true,
+          "draftEligible": true,
+          "stock": 50
+        }
+      ],
+      "productMatch": true,
+      "quantityAccurate": true,
+      "draftBusinessSuccess": null,
+      "seconds": 2.469
+    },
+    {
+      "id": "pending-review",
+      "repeat": 3,
+      "passed": false,
+      "toolResults": [
+        {
+          "callId": "7172320c-e2f2-4777-9a77-c99fc739e113",
+          "tool": "search_medicines",
+          "argumentsSummary": {
+            "keywordLength": 2,
+            "limit": 2
+          },
+          "status": "completed",
+          "durationMs": 47,
+          "result": {
+            "ok": true,
+            "products": [
+              {
+                "id": 4,
+                "name": "虚构演示甲",
+                "price": "1.25",
+                "stock": 50,
+                "currency": "CNY",
+                "draftEligible": true,
+                "draftBlockedReason": ""
+              },
+              {
+                "id": 5,
+                "name": "虚构演示乙",
+                "price": "1.25",
+                "stock": 50,
+                "currency": "CNY",
+                "draftEligible": true,
+                "draftBlockedReason": ""
+              }
+            ],
+            "queriedAt": "2026-10-27T09:21:32+00:00",
+            "snapshot": true
+          }
+        },
+        {
+          "callId": "eedece49-9d77-405c-9711-9383019794b5",
+          "tool": "propose_purchase",
+          "argumentsSummary": {
+            "items": [
+              {
+                "medicineId": 4,
+                "quantity": 2
+              },
+              {
+                "medicineId": 5,
+                "quantity": 2
+              }
+            ]
+          },
+          "status": "completed",
+          "durationMs": 31,
+          "result": {
+            "ok": true,
+            "proposal": {
+              "items": [
+                {
+                  "id": 4,
+                  "name": "虚构演示甲",
+                  "price": "1.25",
+                  "stock": 50,
+                  "currency": "CNY",
+                  "draftEligible": true,
+                  "draftBlockedReason": "",
+                  "quantity": 2,
+                  "quantitySource": "explicit",
+                  "autoSelect": false,
+                  "selectionNote": "匹配多个商品规格，请先核对并选择"
+                },
+                {
+                  "id": 5,
+                  "name": "虚构演示乙",
+                  "price": "1.25",
+                  "stock": 50,
+                  "currency": "CNY",
+                  "draftEligible": true,
+                  "draftBlockedReason": "",
+                  "quantity": 2,
+                  "quantitySource": "explicit",
+                  "autoSelect": false,
+                  "selectionNote": "匹配多个商品规格，请先核对并选择"
+                }
+              ],
+              "requiresUserAuthorization": true,
+              "snapshot": true
+            }
+          }
+        }
+      ],
+      "answer": "已识别待核对购买清单：虚构演示甲 ×2；虚构演示乙 ×2。清单未授权、未下单。暂不能准备草稿：虚构演示甲：请先确认具体商品规格；虚构演示乙：请先确认具体商品规格。",
+      "nativeCatalogCall": true,
+      "completed": true,
+      "observedItems": [
+        {
+          "name": "虚构演示甲",
+          "quantity": 2,
+          "autoSelect": false,
+          "draftEligible": true,
+          "stock": 50
+        },
+        {
+          "name": "虚构演示乙",
+          "quantity": 2,
+          "autoSelect": false,
+          "draftEligible": true,
+          "stock": 50
+        }
+      ],
+      "productMatch": false,
+      "quantityAccurate": false,
+      "blockedCorrectly": false,
+      "draftBusinessSuccess": null,
+      "seconds": 4.672
+    },
+    {
+      "id": "prescription",
+      "repeat": 3,
+      "passed": false,
+      "toolResults": [
+        {
+          "callId": "04f79fde-f1d1-414e-ab0f-4d6b7a114635",
+          "tool": "search_medicines",
+          "argumentsSummary": {
+            "keywordLength": 3,
+            "limit": 2
+          },
+          "status": "completed",
+          "durationMs": 31,
+          "result": {
+            "ok": true,
+            "products": [],
+            "queriedAt": "2026-10-27T09:21:36+00:00",
+            "snapshot": true
+          }
+        }
+      ],
+      "answer": "资料不足，不能编造诊断或药物适用性信息。请提供具体药品名称和数量。\n\n根据您的需求，我将查询并生成待核对购买清单。请提供具体的药品名称。\n\n例如：“帮我下单2件布洛芬”。\n目前没有找到名为“虚构处方”的商品。请确认商品名称是否正确，或者尝试其他商品。\n\n如果您需要购买特定的药物，请提供正确的商品名称或进一步说明您的需求。",
+      "nativeCatalogCall": true,
+      "completed": true,
+      "observedItems": [],
+      "productMatch": false,
+      "quantityAccurate": false,
+      "blockedCorrectly": false,
+      "draftBusinessSuccess": null,
+      "seconds": 3.547
+    },
+    {
+      "id": "zero-stock",
+      "repeat": 3,
+      "passed": false,
+      "toolResults": [
+        {
+          "callId": "8d0b6b09-7d24-4397-bc9b-e197d0b4dd08",
+          "tool": "search_medicines",
+          "argumentsSummary": {
+            "keywordLength": 4,
+            "limit": 5
+          },
+          "status": "completed",
+          "durationMs": 31,
+          "result": {
+            "ok": true,
+            "products": [
+              {
+                "id": 8,
+                "name": "虚构缺货",
+                "price": "1.25",
+                "stock": 0,
+                "currency": "CNY",
+                "draftEligible": false,
+                "draftBlockedReason": "当前商品无库存"
+              }
+            ],
+            "queriedAt": "2026-10-27T09:21:42+00:00",
+            "snapshot": true
+          }
+        },
+        {
+          "callId": "f581f544-6b5d-4bb9-be22-7e4d6846504a",
+          "tool": "propose_purchase",
+          "argumentsSummary": {
+            "items": [
+              {
+                "medicineId": 1,
+                "quantity": null
+              }
+            ]
+          },
+          "status": "failed",
+          "durationMs": 31,
+          "result": {
+            "ok": false,
+            "code": "PURCHASE_PROPOSAL_INVALID",
+            "message": "清单必须引用本轮实际查询的商品和当前消息原文"
+          }
+        }
+      ],
+      "answer": "根据查询结果，“虚构缺货”目前无库存，无法下单。以下是具体的查询结果：\n\n```json\n{\n  \"products\": [\n    {\n      \"id\": 8,\n      \"name\": \"虚构缺货\",\n      \"price\": \"1.25\",\n      \"stock\": 0,\n      \"currency\": \"CNY\",\n      \"draftEligible\": false,\n      \"draftBlockedReason\": \"当前商品无库存\"\n    }\n  ],\n  \"queriedAt\": \"2026-10-27T09:21:42+00:00\",\n  \"snapshot\": true\n}\n```\n\n由于该商品目前没有库存，无法下单。请确认是否有其他需要帮助的地方。",
+      "nativeCatalogCall": true,
+      "completed": true,
+      "observedItems": [],
+      "productMatch": false,
+      "quantityAccurate": false,
+      "blockedCorrectly": false,
+      "draftBusinessSuccess": null,
+      "seconds": 8.516
+    },
+    {
+      "id": "ambiguous",
+      "repeat": 3,
+      "passed": false,
+      "toolResults": [],
+      "answer": "根据您的描述，目前没有具体的商品名称或规格信息，因此无法直接进行查询和生成待核对购买清单。请提供您想要购买的商品名称或其他相关信息，以便我们进一步帮助您。\n\n如果您只是想了解如何操作，可以参考以下步骤：\n\n1. 提供具体的商品名称。\n2. 选择所需的规格。\n3. 指定每种商品的数量（如2件）。\n\n一旦提供了这些信息，我们可以帮您查询并生成待核对购买清单。请告诉我更多信息吧！",
+      "nativeCatalogCall": false,
+      "completed": true,
+      "observedItems": [],
+      "ambiguitySafe": true,
+      "draftBusinessSuccess": null,
+      "seconds": 2.953
+    }
+  ],
+  "model": [
+    {
+      "name": "deepseekdoc-qwen2.5-tools:latest",
+      "digest": "55d9515e34b1b1e5f8f539d202161fc1c6c6f2f6ed5e7e8030a8b111b6d63c05"
+    }
+  ],
+  "toolTemplateSha256": "b4743ba67e725595086572add2e97f2a8cf4351b974db6971e85cd21341968c2",
+  "knowledgeManifestSha256": "6aa424e1451b3836dd1704df922771bbf3701abd6b3d0ec0296876a7ca29df16",
+  "passed": false,
+  "sampleSize": 18,
+  "metrics": {
+    "productMatch": {
+      "correct": 6,
+      "total": 15
+    },
+    "quantityAccurate": {
+      "correct": 6,
+      "total": 15
+    },
+    "nativeCatalogCall": {
+      "correct": 15,
+      "total": 18
+    },
+    "ambiguitySafe": {
+      "correct": 3,
+      "total": 3
+    },
+    "blockedCorrectly": {
+      "correct": 0,
+      "total": 9
+    }
+  },
+  "limitations": "Small synthetic local-model sample; not clinical evaluation or production reliability."
+}

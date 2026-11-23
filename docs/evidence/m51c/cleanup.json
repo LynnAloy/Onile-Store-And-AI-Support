@@ -1,0 +1,13 @@
+{
+  "cleaned": true,
+  "syntheticOnly": true,
+  "normalDatabaseChanged": false,
+  "remainingOwnedRows": {
+    "users": 0,
+    "orders": 0,
+    "payment_records": 0,
+    "payment_authorizations": 0,
+    "payment_operation_requests": 0,
+    "ownedProduct": 0
+  }
+}

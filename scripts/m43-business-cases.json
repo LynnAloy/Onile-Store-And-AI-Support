@@ -1,0 +1,47 @@
+{
+  "version": "m43-business-v1",
+  "executor": "m42_live_smoke.py",
+  "resultFile": "m42-live-results.json",
+  "cases": [
+    {
+      "id": "B01",
+      "expectedCheck": "Default UNKNOWN/PENDING and RX qualification gates block draft writes"
+    },
+    {
+      "id": "B02",
+      "expectedCheck": "Order preparation scope is separate from read delegation and USER confirmation"
+    },
+    {
+      "id": "B03",
+      "expectedCheck": "Native model prepare_order_draft, authoritative amount, durable idempotency and recovery"
+    },
+    {
+      "id": "B04",
+      "expectedCheck": "Cross-user draft ownership and agent prohibition on confirmation"
+    },
+    {
+      "id": "B05",
+      "expectedCheck": "Actual price, stock and qualification changes require fresh review"
+    },
+    {
+      "id": "B06",
+      "expectedCheck": "USER confirmation is idempotent, unpaid, private and does not change inventory or balance"
+    },
+    {
+      "id": "B07",
+      "expectedCheck": "Revocation preserves drafts; cancellation and expiry reject confirmation"
+    },
+    {
+      "id": "B08",
+      "expectedCheck": "Real MySQL concurrent prepare is idempotent and confirm/cancel has one winner"
+    },
+    {
+      "id": "B09",
+      "expectedCheck": "Scoped late-grant revocation preserves newer grants and rejects cross-user or malformed cleanup"
+    },
+    {
+      "id": "B10",
+      "expectedCheck": "Parent logout invalidates order preparation without affecting another user"
+    }
+  ]
+}

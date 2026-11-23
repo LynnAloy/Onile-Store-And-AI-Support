@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "completedAt": "2026-10-28T07:50:27.881162+00:00",
+  "javaDefaultExecuted": 69,
+  "javaRealMySQLExecuted": 22,
+  "frontendTests": 59,
+  "pythonTests": 83,
+  "opsTests": 20,
+  "stressGroups": 24,
+  "permissionAndFinalRecoveryChecks": 16,
+  "standardLiveGroups": 11,
+  "liveContractResponses": 32,
+  "browserFaultCases": 8,
+  "ragCases": 9,
+  "acceptanceVectorsMapped": 15,
+  "pythonSyntaxPassed": true,
+  "normalBusinessTablesUnchanged": true,
+  "faultInfrastructureRemoved": true,
+  "normalNewPaymentEnabled": false,
+  "demoNewPaymentEnabled": true,
+  "realThirdPartyPayment": false
+}

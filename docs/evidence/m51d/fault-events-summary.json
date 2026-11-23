@@ -1,0 +1,32 @@
+{
+  "passed": true,
+  "committedResponsesDropped": 2,
+  "demoJavaRestarts": 3,
+  "processKilledWhileRegisteredAndWaiting": true,
+  "responseDelays": [
+    {
+      "mode": "delay_authorization",
+      "delaySeconds": 18.249,
+      "upstreamStatus": 200
+    },
+    {
+      "mode": "delay_authorization",
+      "delaySeconds": 1.11,
+      "upstreamStatus": 200
+    },
+    {
+      "mode": "delay_authorization",
+      "delaySeconds": 1.614,
+      "upstreamStatus": 200
+    },
+    {
+      "mode": "delay_read_unauthorized",
+      "delaySeconds": 1.208,
+      "upstreamStatus": 401
+    }
+  ],
+  "scopedLateRevokes": 2,
+  "allLateRevokesUseOriginalOwner": true,
+  "newAuthorizationSurvivedOldCleanupUntilOwnExpiry": true,
+  "headersOrBodiesIncluded": false
+}

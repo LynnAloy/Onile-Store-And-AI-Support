@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "syntheticOnly": true,
+  "normalDatabaseChanged": false,
+  "paidOrders": 4,
+  "paymentRecords": 4,
+  "purchaseLedgers": 4,
+  "purchaseTotal": "1.00",
+  "remainingWalletBalance": "99.00",
+  "pointsAwarded": 0,
+  "inventoryDeducted": 10,
+  "inventoryRemaining": 90,
+  "brokenFinancialLinks": 0,
+  "activeAuthorizations": 0,
+  "abortedOldRequestRejected": true,
+  "newPaymentExplicitlySucceeded": true
+}

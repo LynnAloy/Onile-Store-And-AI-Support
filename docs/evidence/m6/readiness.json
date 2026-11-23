@@ -1,0 +1,33 @@
+{
+  "passed": true,
+  "results": [
+    {
+      "environment": "normal",
+      "port": 3000,
+      "adminLoginAndRole": true,
+      "catalogAdminApi": true,
+      "defaultConsentOff": true,
+      "limits": [
+        50,
+        200
+      ],
+      "aiHealth": true,
+      "unauthenticatedAdminDenied": true
+    },
+    {
+      "environment": "demo",
+      "port": 13000,
+      "adminLoginAndRole": true,
+      "catalogAdminApi": true,
+      "defaultConsentOff": true,
+      "limits": [
+        50,
+        200
+      ],
+      "aiHealth": true,
+      "unauthenticatedAdminDenied": true
+    }
+  ],
+  "credentialsLogged": false,
+  "financialWrites": false
+}

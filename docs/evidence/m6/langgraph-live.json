@@ -1,0 +1,57 @@
+{
+  "passed": true,
+  "realModel": true,
+  "langgraph": true,
+  "financialWrites": false,
+  "checks": [
+    {
+      "passed": true,
+      "query": "帮我购买10件虚构演示甲",
+      "plan": {
+        "intent": "purchase",
+        "keywords": [
+          "虚构演示甲"
+        ],
+        "requests": [
+          {
+            "name": "虚构演示甲",
+            "quantity": 10
+          }
+        ]
+      },
+      "selection": {
+        "items": [
+          {
+            "medicineId": 4,
+            "name": "虚构演示甲"
+          }
+        ]
+      },
+      "catalogCount": 10,
+      "quantity": 10
+    },
+    {
+      "passed": true,
+      "query": "库存中是否有治疗感冒的药物？",
+      "plan": {
+        "intent": "inventory",
+        "keywords": [
+          "治疗",
+          "感冒",
+          "药物"
+        ],
+        "requests": [
+          {
+            "name": "治疗感冒的药物",
+            "quantity": null
+          }
+        ]
+      },
+      "selection": {
+        "items": []
+      },
+      "catalogCount": 10,
+      "quantity": null
+    }
+  ]
+}

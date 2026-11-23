@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "localFilesOnly": true,
+  "embeddingServer": "http://127.0.0.1:11434",
+  "externalExport": false,
+  "indices": {
+    ".local-run": {
+      "revision": 6,
+      "platformOrders": "1.5"
+    },
+    ".local-demo": {
+      "revision": 3,
+      "platformOrders": "1.5"
+    }
+  }
+}

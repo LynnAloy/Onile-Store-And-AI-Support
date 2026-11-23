@@ -1,0 +1,34 @@
+{
+  "date": "2026-10-27 19:32:56",
+  "realServices": true,
+  "checks": [
+    {
+      "check": "Real MySQL default consent, ownership and bounds",
+      "passed": true
+    },
+    {
+      "check": "Java internal whitelist, BMI and no-store context",
+      "passed": true
+    },
+    {
+      "check": "FastAPI and real Ollama use explicitly authorized synthetic profile",
+      "passed": true
+    },
+    {
+      "check": "Real embeddings, hybrid retrieval, citations and SSE generation",
+      "passed": true
+    },
+    {
+      "check": "Saving consent withdrawal interrupts a real active model stream",
+      "passed": true
+    },
+    {
+      "check": "Post-revocation ordinary chat, retained profile and two consent audit events",
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "failure": null,
+  "syntheticHealthDataOnly": true,
+  "credentialsLogged": false
+}

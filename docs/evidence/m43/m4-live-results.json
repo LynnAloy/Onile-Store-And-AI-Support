@@ -1,0 +1,37 @@
+{
+  "date": "2026-10-27 19:33:10",
+  "realServices": true,
+  "nativeToolProtocolRequired": true,
+  "allThreeNativeToolsVerified": true,
+  "model": "deepseekdoc-qwen2.5-tools:latest",
+  "checks": [
+    {
+      "check": "Native model search_medicines -> real Java catalog -> exact money and zero-stock card",
+      "passed": true
+    },
+    {
+      "check": "Native get_medicine call and server-bound product ID",
+      "passed": true
+    },
+    {
+      "check": "Native get_my_order reads owned order without recipient details",
+      "passed": true
+    },
+    {
+      "check": "Other user's order is returned as NOT_FOUND through actual tool calling",
+      "passed": true
+    },
+    {
+      "check": "Actual no-match tool result is shown as an empty catalog",
+      "passed": true
+    },
+    {
+      "check": "Persisted tool history/replay and unchanged stock, balance and order count",
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "failure": null,
+  "syntheticFixturesOnly": true,
+  "credentialsLogged": false
+}

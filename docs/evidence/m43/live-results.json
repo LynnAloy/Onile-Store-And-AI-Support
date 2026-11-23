@@ -1,0 +1,45 @@
+{
+  "date": "2026-10-27 19:32:25",
+  "realServices": true,
+  "checks": [
+    {
+      "check": "Vue page, Vite proxy and anonymous access",
+      "passed": true
+    },
+    {
+      "check": "Real MySQL registration/login, JSON profile and user ownership",
+      "passed": true
+    },
+    {
+      "check": "Actual wallet PIN, checkout, idempotence and order isolation",
+      "passed": true
+    },
+    {
+      "check": "Real MySQL concurrent last-item purchase has one winner and one debit",
+      "passed": true
+    },
+    {
+      "check": "Java-Python real delegation and conversation ownership",
+      "passed": true
+    },
+    {
+      "check": "Real Ollama streaming, multi-turn context, persistence and replay",
+      "passed": true,
+      "model": "deepseekdoc-qwen2.5-tools:latest",
+      "firstDeltaSeconds": 8.19,
+      "firstTotalSeconds": 8.72,
+      "secondTotalSeconds": 0.61
+    },
+    {
+      "check": "Real proxy/client disconnect cancels model and records interruption",
+      "passed": true
+    },
+    {
+      "check": "Real logout revokes parent and AI delegation without affecting another user",
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "failure": null,
+  "testCredentialsLogged": false
+}

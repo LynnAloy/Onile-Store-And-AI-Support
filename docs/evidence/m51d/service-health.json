@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "services": {
+    "normal": {
+      "frontend": 200,
+      "frontendProtectedAPI": 401,
+      "javaProtectedAPI": 401,
+      "aiHealth": 200,
+      "paymentsEnabled": false
+    },
+    "demo": {
+      "frontend": 200,
+      "frontendProtectedAPI": 401,
+      "javaProtectedAPI": 401,
+      "aiHealth": 200,
+      "paymentsEnabled": true
+    }
+  },
+  "faultProxyStopped": true,
+  "faultRouteAndTemporaryCredentialsRemoved": true,
+  "healthNotEquivalentToPaymentProof": true
+}

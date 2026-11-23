@@ -1,0 +1,10 @@
+{
+  "syntheticPaymentRowsCleaned": true,
+  "remainingPaymentRowCounts": {
+    "orders": 0,
+    "payment_records": 0,
+    "payment_authorizations": 0,
+    "payment_operation_requests": 0
+  },
+  "privateMySQLTestConfigRemoved": true
+}

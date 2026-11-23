@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "realProcessAbort": true,
+  "realTimeThresholdWaited": true,
+  "requestStatus": "REJECTED",
+  "code": "PAYMENT_ATTEMPT_EXPIRED",
+  "observedAgeSeconds": 147,
+  "financialWritesByReconciler": 0
+}

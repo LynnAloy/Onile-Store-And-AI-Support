@@ -1,0 +1,51 @@
+{
+  "date": "2026-10-27 19:33:19",
+  "realServices": true,
+  "model": "deepseekdoc-qwen2.5-tools:latest",
+  "checks": [
+    {
+      "check": "Default UNKNOWN/PENDING and RX qualification gates block draft writes",
+      "passed": true
+    },
+    {
+      "check": "Order preparation scope is separate from read delegation and USER confirmation",
+      "passed": true
+    },
+    {
+      "check": "Native model prepare_order_draft, authoritative amount, durable idempotency and recovery",
+      "passed": true
+    },
+    {
+      "check": "Cross-user draft ownership and agent prohibition on confirmation",
+      "passed": true
+    },
+    {
+      "check": "Actual price, stock and qualification changes require fresh review",
+      "passed": true
+    },
+    {
+      "check": "USER confirmation is idempotent, unpaid, private and does not change inventory or balance",
+      "passed": true
+    },
+    {
+      "check": "Revocation preserves drafts; cancellation and expiry reject confirmation",
+      "passed": true
+    },
+    {
+      "check": "Real MySQL concurrent prepare is idempotent and confirm/cancel has one winner",
+      "passed": true
+    },
+    {
+      "check": "Scoped late-grant revocation preserves newer grants and rejects cross-user or malformed cleanup",
+      "passed": true
+    },
+    {
+      "check": "Parent logout invalidates order preparation without affecting another user",
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "failure": null,
+  "syntheticFixturesOnly": true,
+  "credentialsLogged": false
+}

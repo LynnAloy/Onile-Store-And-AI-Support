@@ -1,0 +1,63 @@
+{
+  "passed": true,
+  "resolved": [
+    "R1 financial UNKNOWN preserved",
+    "R2 consent-aware health gate enforced by Java",
+    "R3 reviewed category evidence with version binding"
+  ],
+  "java": [
+    {
+      "suite": "com.example.mybatisplus.CommerceBusinessTests",
+      "passed": 18
+    },
+    {
+      "suite": "com.example.mybatisplus.CommerceMySqlTests",
+      "passed": 0
+    },
+    {
+      "suite": "com.example.mybatisplus.M1SecurityBusinessTests",
+      "passed": 47
+    },
+    {
+      "suite": "com.example.mybatisplus.ModelConfigTests",
+      "passed": 3
+    },
+    {
+      "suite": "com.example.mybatisplus.MybatisPlusDemoApplicationTests",
+      "passed": 1
+    },
+    {
+      "suite": "com.example.mybatisplus.PaymentBusinessTests",
+      "passed": 21
+    },
+    {
+      "suite": "com.example.mybatisplus.PaymentMySqlTests",
+      "passed": 0
+    }
+  ],
+  "javaPassed": 90,
+  "pythonPassed": 95,
+  "frontendPassed": 69,
+  "opsPassed": 23,
+  "realMySQLPassed": 18,
+  "realModelAcceptance": "p1-live.json",
+  "browserEvidenceApprovalVerified": true,
+  "syntheticFixtureCredentialFileRemoved": true,
+  "bothEnvironmentsReady": true,
+  "remainingScope": "P2 issues are tracked separately; no clinical safety certification",
+  "hashes": {
+    "DeepseekDoc/src/services/commerceClient.mjs": "1b010ca1990c934374de7294bf42e712ff9c66c6b69976c4b9f9178daa3d5988",
+    "DeepseekDoc/src/components/views/Home.vue": "ec017e78cea292908a3b7ae2524aaf46f19d522edd5190237b018875b24a31da",
+    "DeepseekDoc/src/components/views/AdminMedicineEvidence.vue": "415fbf8f449f350950e469b087382a79691dbc27fa93758f3351d4766c2326c5",
+    "python-ai/app/inventory_graph.py": "916906766454bad6042b9f1e826eca259260ccf490f9e91f663d0bae2370b3c9",
+    "python-ai/app/purchase_risk.py": "f3d42e295eba96ccd411ba00c098512e3a09dfaa864e311263980babbf15fa9f",
+    "python-ai/app/agent.py": "cb6f9350a2bca1cb74716827ba44ac149a14ef5e8f02f03a3bad58ed86c7ae6c",
+    "python-ai/app/tools.py": "ee85fd243a5f15c1bfd9813b6b23b178b15b84cb6e05dfad7ebe9ebf2e0d8205",
+    "docs/sql/P1-evidence.sql": "b80b80b268dc1675555798dfcd97145d3eeb8c2e0acf6f5b0ea4fc151851fb96",
+    "scripts/p1_migrate.py": "458f5a3896b45d7caa1159fdbd068c36ecef53803279e55dea83ed9f801bd26b",
+    "scripts/p1_live.py": "c4c736758e076c3a0794ae2e399d05a188d4f4a186e9f81d862e85ade4b044a8",
+    "mybatis-plus-demo/mybatis-plus-demo/src/main/java/com/example/mybatisplus/service/MedicineEvidenceService.java": "095cfb5dba44557a5639451a14fb630e7fb75dc1f238e92ff1fa3c0119e951b3",
+    "mybatis-plus-demo/mybatis-plus-demo/src/main/java/com/example/mybatisplus/service/PurchaseRiskService.java": "e37d01e2061bf650eeff4eaaa79377d242ca4d500f4bf5bab79610a7c2b0572d",
+    "mybatis-plus-demo/mybatis-plus-demo/src/main/java/com/example/mybatisplus/service/AutoOrderService.java": "79b691e52071f00eb2f1bacf014ee0d3657f092ba82a02026943941fdefe862d"
+  }
+}

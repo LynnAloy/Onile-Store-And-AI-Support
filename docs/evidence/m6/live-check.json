@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "realModel": true,
+  "realMySQL": true,
+  "groundedQuantity": 2,
+  "amount": "5.00",
+  "singleDebitOnReplay": true,
+  "shippingFilledByJava": true,
+  "privateDataAbsentFromModelStream": true,
+  "syntheticOnly": true
+}

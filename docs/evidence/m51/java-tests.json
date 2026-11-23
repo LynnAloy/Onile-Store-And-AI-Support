@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "defaultSuiteExecuted": 65,
+  "defaultSuiteSkipped": 18,
+  "failures": 0,
+  "errors": 0,
+  "packageSucceeded": true,
+  "realMySQLTestsReportedSeparately": true
+}

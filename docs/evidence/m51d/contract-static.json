@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "checks": [
+    "both contracts resolve local references",
+    "payment backend version and feature gate declared",
+    "six implemented USER-only operations",
+    "strict write DTOs exclude client financial authority",
+    "new and historical order schemas have disjoint states",
+    "separate authorization header and idempotency key",
+    "AI summary preserves strict private-data whitelist",
+    "AI summary covers authoritative and historical payment states",
+    "AI runtime unchanged; implemented UI validated by frontend suite"
+  ],
+  "count": 9,
+  "staticOnly": true,
+  "validatedVersion": "5.1.1",
+  "runtimeComparisonPrefixes": [
+    "python-ai/app/"
+  ]
+}

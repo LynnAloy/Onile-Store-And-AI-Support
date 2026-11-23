@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "pythonTests": 92,
+  "frontendTests": 64,
+  "javaTests": 19,
+  "javaPackage": true,
+  "frontendBuild": true,
+  "browserQuantityAndDrawerValue": 10,
+  "realGraphSmoke": "langgraph-live.json",
+  "financialWrites": false,
+  "sourceHashes": {
+    "python-ai/app/inventory_graph.py": "8c1d907eae303c906dbf2cde88fbf9116aa0394e9336d4abc94f318e3bf3d818",
+    "python-ai/app/agent.py": "5a063c75e0b4788057009bf194d0dcc868406f4b69236a2a072f9466000dc8b0",
+    "python-ai/app/model.py": "5ae436e3971e7601925038199180afd5673b35316070668a171b850be67be22b",
+    "python-ai/app/openai_model.py": "c9bc881074ccc7c86ef7440151c15db8c4431da253881083b61529b5b400c6af",
+    "python-ai/app/runtime_model.py": "32735b9cf9990b03305ad42ac0db8a40e875edc682ddcca4c76de86895da39dc",
+    "python-ai/app/config.py": "b247312578da7efb48ac7dd940e9acda44f462eb6eaa77ffdcc09c995120ae96",
+    "python-ai/requirements.txt": "5e949d97482a1f13693627541431e7bcd0783dc0e9e120f9555072cf6b11f7ca",
+    "DeepseekDoc/src/components/views/Home.vue": "313d60bade630bbf13eb59b3061f868887b6c4922fd2792218aac5f92b65df04",
+    "scripts/local_stack.py": "b931b1e3a8e3f837f13355e0b74723c489dc5c33d81f34f025ddbbe3589e9353",
+    "scripts/langgraph_inventory_smoke.py": "02a798e1f69171ce1b0318b73363a15ad7928674f825a3207be58994de8e9190",
+    "mybatis-plus-demo/mybatis-plus-demo/src/main/java/com/example/mybatisplus/controller/AgentContractController.java": "601f3a1e1266d0a8f9588706e0a03833916fe601912ade67b33318f8e4828543"
+  },
+  "websiteReady": true
+}

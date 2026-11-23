@@ -1,0 +1,81 @@
+{
+  "passed": true,
+  "execution": "CUA real browser interactions plus scoped database assertions",
+  "checks": [
+    {
+      "check": "资料确认与支付验证均不扣款",
+      "observation": "真实UI操作后数据库基线核对",
+      "passed": true
+    },
+    {
+      "check": "密码错误不退出有效登录",
+      "observation": "输入错误密码后仍可正确验证",
+      "passed": true
+    },
+    {
+      "check": "验证成功后独立点击才付款",
+      "observation": "修复弹层关闭事件误撤销后完成实际付款",
+      "passed": true
+    },
+    {
+      "check": "明确付款仅扣一次",
+      "observation": "余额减0.40、库存减4、流水与支付记录各1",
+      "passed": true
+    },
+    {
+      "check": "刷新恢复PAID回执不重复付款",
+      "observation": "实际刷新并再次核对账务",
+      "passed": true
+    },
+    {
+      "check": "主动关闭待付款订单",
+      "observation": "确认弹层后显示CLOSED，资金不变",
+      "passed": true
+    },
+    {
+      "check": "订单列表区分支付终态",
+      "observation": "实际显示PAID、CLOSED与PENDING_PAYMENT",
+      "passed": true
+    },
+    {
+      "check": "切换账号禁止读取旧订单",
+      "observation": "页面记录不存在，商品、收货与回执均不显示",
+      "passed": true
+    },
+    {
+      "check": "1366x768布局可达",
+      "observation": "两栏无横向溢出，验证和关闭按钮可见",
+      "passed": true
+    },
+    {
+      "check": "450x668验证弹层可达",
+      "observation": "左右约15.2/435.2px，底边约387.9px",
+      "passed": true
+    },
+    {
+      "check": "390x844回执可见",
+      "observation": "单栏无横向溢出，回执位于视口内",
+      "passed": true
+    },
+    {
+      "check": "七项长清单可滚动到操作区",
+      "observation": "验证按钮底边709.2px，小于844px视口",
+      "passed": true
+    },
+    {
+      "check": "主动撤回清理授权",
+      "observation": "按钮恢复为验证状态，数据库ACTIVE授权0",
+      "passed": true
+    },
+    {
+      "check": "过期草稿拒绝新建订单",
+      "observation": "旧草稿15分钟后显示DRAFT_EXPIRED；未延长原期限",
+      "passed": true
+    }
+  ],
+  "count": 14,
+  "syntheticOnly": true,
+  "commitResponseLossInjected": false,
+  "viewportRestored": true,
+  "temporaryTabClosed": true
+}

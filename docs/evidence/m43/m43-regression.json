@@ -1,0 +1,30 @@
+{
+  "checks": [
+    {
+      "script": "live_smoke.py",
+      "passed": true,
+      "seconds": 13.28,
+      "log": "m43-live_smoke.py.log"
+    },
+    {
+      "script": "m3_live_smoke.py",
+      "passed": true,
+      "seconds": 30.26,
+      "log": "m43-m3_live_smoke.py.log"
+    },
+    {
+      "script": "m4_live_smoke.py",
+      "passed": true,
+      "seconds": 14.84,
+      "log": "m43-m4_live_smoke.py.log"
+    },
+    {
+      "script": "m42_live_smoke.py",
+      "passed": true,
+      "seconds": 8.56,
+      "log": "m43-m42_live_smoke.py.log"
+    }
+  ],
+  "running": false,
+  "passed": true
+}

@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "realOpenAICompatibleEndpoint": "local Ollama /v1/chat/completions",
+  "streamAndToolCalling": true,
+  "paidProviderCalled": false,
+  "pythonTests": 88,
+  "frontendTests": 64,
+  "javaTests": 18,
+  "normalWebsiteReady": true,
+  "demoWebsiteReady": true,
+  "adminPageProtocolAndKeyFieldsVerified": true,
+  "clearKeyNeverFallsBackToEnvironmentKey": true
+}

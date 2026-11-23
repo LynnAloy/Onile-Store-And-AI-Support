@@ -1,0 +1,375 @@
+{
+  "datasetVersion": "m43-v1",
+  "repeats": 3,
+  "rows": [
+    {
+      "id": "two-quantities",
+      "repeat": 1,
+      "passed": true,
+      "nativeCatalogCall": true,
+      "completed": true,
+      "observedItems": [
+        {
+          "name": "虚构演示甲",
+          "quantity": 5,
+          "autoSelect": true,
+          "draftEligible": true,
+          "stock": 50
+        },
+        {
+          "name": "虚构演示乙",
+          "quantity": 3,
+          "autoSelect": true,
+          "draftEligible": true,
+          "stock": 50
+        }
+      ],
+      "productMatch": true,
+      "quantityAccurate": true,
+      "draftBusinessSuccess": null,
+      "seconds": 3.25
+    },
+    {
+      "id": "missing-quantity",
+      "repeat": 1,
+      "passed": true,
+      "nativeCatalogCall": true,
+      "completed": true,
+      "observedItems": [
+        {
+          "name": "虚构演示甲",
+          "quantity": null,
+          "autoSelect": true,
+          "draftEligible": true,
+          "stock": 50
+        }
+      ],
+      "productMatch": true,
+      "quantityAccurate": true,
+      "draftBusinessSuccess": null,
+      "seconds": 2.359
+    },
+    {
+      "id": "pending-review",
+      "repeat": 1,
+      "passed": false,
+      "nativeCatalogCall": true,
+      "completed": true,
+      "observedItems": [
+        {
+          "name": "虚构演示甲",
+          "quantity": 2,
+          "autoSelect": false,
+          "draftEligible": true,
+          "stock": 50
+        },
+        {
+          "name": "虚构演示乙",
+          "quantity": 2,
+          "autoSelect": false,
+          "draftEligible": true,
+          "stock": 50
+        }
+      ],
+      "productMatch": false,
+      "quantityAccurate": false,
+      "blockedCorrectly": false,
+      "draftBusinessSuccess": null,
+      "seconds": 4.5
+    },
+    {
+      "id": "prescription",
+      "repeat": 1,
+      "passed": false,
+      "nativeCatalogCall": true,
+      "completed": true,
+      "observedItems": [],
+      "productMatch": false,
+      "quantityAccurate": false,
+      "blockedCorrectly": false,
+      "draftBusinessSuccess": null,
+      "seconds": 3.531
+    },
+    {
+      "id": "zero-stock",
+      "repeat": 1,
+      "passed": false,
+      "nativeCatalogCall": true,
+      "completed": true,
+      "observedItems": [],
+      "productMatch": false,
+      "quantityAccurate": false,
+      "blockedCorrectly": false,
+      "draftBusinessSuccess": null,
+      "seconds": 8.344
+    },
+    {
+      "id": "ambiguous",
+      "repeat": 1,
+      "passed": false,
+      "nativeCatalogCall": false,
+      "completed": true,
+      "observedItems": [],
+      "ambiguitySafe": true,
+      "draftBusinessSuccess": null,
+      "seconds": 2.875
+    },
+    {
+      "id": "two-quantities",
+      "repeat": 2,
+      "passed": true,
+      "nativeCatalogCall": true,
+      "completed": true,
+      "observedItems": [
+        {
+          "name": "虚构演示甲",
+          "quantity": 5,
+          "autoSelect": true,
+          "draftEligible": true,
+          "stock": 50
+        },
+        {
+          "name": "虚构演示乙",
+          "quantity": 3,
+          "autoSelect": true,
+          "draftEligible": true,
+          "stock": 50
+        }
+      ],
+      "productMatch": true,
+      "quantityAccurate": true,
+      "draftBusinessSuccess": null,
+      "seconds": 3.0
+    },
+    {
+      "id": "missing-quantity",
+      "repeat": 2,
+      "passed": true,
+      "nativeCatalogCall": true,
+      "completed": true,
+      "observedItems": [
+        {
+          "name": "虚构演示甲",
+          "quantity": null,
+          "autoSelect": true,
+          "draftEligible": true,
+          "stock": 50
+        }
+      ],
+      "productMatch": true,
+      "quantityAccurate": true,
+      "draftBusinessSuccess": null,
+      "seconds": 2.406
+    },
+    {
+      "id": "pending-review",
+      "repeat": 2,
+      "passed": false,
+      "nativeCatalogCall": true,
+      "completed": true,
+      "observedItems": [
+        {
+          "name": "虚构演示甲",
+          "quantity": 2,
+          "autoSelect": false,
+          "draftEligible": true,
+          "stock": 50
+        },
+        {
+          "name": "虚构演示乙",
+          "quantity": 2,
+          "autoSelect": false,
+          "draftEligible": true,
+          "stock": 50
+        }
+      ],
+      "productMatch": false,
+      "quantityAccurate": false,
+      "blockedCorrectly": false,
+      "draftBusinessSuccess": null,
+      "seconds": 4.531
+    },
+    {
+      "id": "prescription",
+      "repeat": 2,
+      "passed": false,
+      "nativeCatalogCall": true,
+      "completed": true,
+      "observedItems": [],
+      "productMatch": false,
+      "quantityAccurate": false,
+      "blockedCorrectly": false,
+      "draftBusinessSuccess": null,
+      "seconds": 3.594
+    },
+    {
+      "id": "zero-stock",
+      "repeat": 2,
+      "passed": false,
+      "nativeCatalogCall": true,
+      "completed": true,
+      "observedItems": [],
+      "productMatch": false,
+      "quantityAccurate": false,
+      "blockedCorrectly": false,
+      "draftBusinessSuccess": null,
+      "seconds": 8.391
+    },
+    {
+      "id": "ambiguous",
+      "repeat": 2,
+      "passed": false,
+      "nativeCatalogCall": false,
+      "completed": true,
+      "observedItems": [],
+      "ambiguitySafe": true,
+      "draftBusinessSuccess": null,
+      "seconds": 2.875
+    },
+    {
+      "id": "two-quantities",
+      "repeat": 3,
+      "passed": true,
+      "nativeCatalogCall": true,
+      "completed": true,
+      "observedItems": [
+        {
+          "name": "虚构演示甲",
+          "quantity": 5,
+          "autoSelect": true,
+          "draftEligible": true,
+          "stock": 50
+        },
+        {
+          "name": "虚构演示乙",
+          "quantity": 3,
+          "autoSelect": true,
+          "draftEligible": true,
+          "stock": 50
+        }
+      ],
+      "productMatch": true,
+      "quantityAccurate": true,
+      "draftBusinessSuccess": null,
+      "seconds": 3.031
+    },
+    {
+      "id": "missing-quantity",
+      "repeat": 3,
+      "passed": true,
+      "nativeCatalogCall": true,
+      "completed": true,
+      "observedItems": [
+        {
+          "name": "虚构演示甲",
+          "quantity": null,
+          "autoSelect": true,
+          "draftEligible": true,
+          "stock": 50
+        }
+      ],
+      "productMatch": true,
+      "quantityAccurate": true,
+      "draftBusinessSuccess": null,
+      "seconds": 2.438
+    },
+    {
+      "id": "pending-review",
+      "repeat": 3,
+      "passed": false,
+      "nativeCatalogCall": true,
+      "completed": true,
+      "observedItems": [
+        {
+          "name": "虚构演示甲",
+          "quantity": 2,
+          "autoSelect": false,
+          "draftEligible": true,
+          "stock": 50
+        },
+        {
+          "name": "虚构演示乙",
+          "quantity": 2,
+          "autoSelect": false,
+          "draftEligible": true,
+          "stock": 50
+        }
+      ],
+      "productMatch": false,
+      "quantityAccurate": false,
+      "blockedCorrectly": false,
+      "draftBusinessSuccess": null,
+      "seconds": 4.625
+    },
+    {
+      "id": "prescription",
+      "repeat": 3,
+      "passed": false,
+      "nativeCatalogCall": true,
+      "completed": true,
+      "observedItems": [],
+      "productMatch": false,
+      "quantityAccurate": false,
+      "blockedCorrectly": false,
+      "draftBusinessSuccess": null,
+      "seconds": 3.5
+    },
+    {
+      "id": "zero-stock",
+      "repeat": 3,
+      "passed": false,
+      "nativeCatalogCall": true,
+      "completed": true,
+      "observedItems": [],
+      "productMatch": false,
+      "quantityAccurate": false,
+      "blockedCorrectly": false,
+      "draftBusinessSuccess": null,
+      "seconds": 8.531
+    },
+    {
+      "id": "ambiguous",
+      "repeat": 3,
+      "passed": false,
+      "nativeCatalogCall": false,
+      "completed": true,
+      "observedItems": [],
+      "ambiguitySafe": true,
+      "draftBusinessSuccess": null,
+      "seconds": 2.906
+    }
+  ],
+  "model": [
+    {
+      "name": "deepseekdoc-qwen2.5-tools:latest",
+      "digest": "55d9515e34b1b1e5f8f539d202161fc1c6c6f2f6ed5e7e8030a8b111b6d63c05"
+    }
+  ],
+  "toolTemplateSha256": "b4743ba67e725595086572add2e97f2a8cf4351b974db6971e85cd21341968c2",
+  "knowledgeManifestSha256": "6aa424e1451b3836dd1704df922771bbf3701abd6b3d0ec0296876a7ca29df16",
+  "passed": false,
+  "sampleSize": 18,
+  "metrics": {
+    "productMatch": {
+      "correct": 6,
+      "total": 15
+    },
+    "quantityAccurate": {
+      "correct": 6,
+      "total": 15
+    },
+    "nativeCatalogCall": {
+      "correct": 15,
+      "total": 18
+    },
+    "ambiguitySafe": {
+      "correct": 3,
+      "total": 3
+    },
+    "blockedCorrectly": {
+      "correct": 0,
+      "total": 9
+    }
+  },
+  "limitations": "Small synthetic local-model sample; not clinical evaluation or production reliability."
+}

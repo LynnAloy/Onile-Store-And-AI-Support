@@ -1,0 +1,129 @@
+{
+  "passed": true,
+  "running": false,
+  "checks": [
+    {
+      "name": "login-synthetic-account",
+      "passed": true
+    },
+    {
+      "name": "real-native-tools-quantity-checkbox-edit",
+      "passed": true
+    },
+    {
+      "name": "explicit-authorization-private-shipping-confirmed-unpaid",
+      "passed": true
+    },
+    {
+      "name": "responsive-composer-independent-scroll",
+      "passed": true,
+      "chatHeight": 447,
+      "composerBottom": 751.1999969482422,
+      "composerTop": 595.2999877929688,
+      "documentHeight": 768,
+      "documentWidth": 1366,
+      "height": 768,
+      "independentScroll": true,
+      "width": 1366
+    },
+    {
+      "name": "responsive-composer-independent-scroll",
+      "passed": true,
+      "chatHeight": 314,
+      "composerBottom": 659.1999969482422,
+      "composerTop": 514.2999877929688,
+      "documentHeight": 668,
+      "documentWidth": 450,
+      "height": 668,
+      "independentScroll": true,
+      "width": 450
+    },
+    {
+      "name": "responsive-composer-independent-scroll",
+      "passed": true,
+      "chatHeight": 496,
+      "composerBottom": 835.1999969482422,
+      "composerTop": 690.2999877929688,
+      "documentHeight": 844,
+      "documentWidth": 390,
+      "height": 844,
+      "independentScroll": true,
+      "width": 390
+    },
+    {
+      "name": "pending-selectable-but-authorization-blocked",
+      "passed": true
+    },
+    {
+      "name": "history-preserves-quantity-without-auto-selection",
+      "passed": true
+    },
+    {
+      "name": "missing-quantity-stays-blank-and-blocks-authorization",
+      "passed": true
+    },
+    {
+      "name": "multiple-variants-require-manual-choice-with-original-quantity",
+      "passed": true
+    },
+    {
+      "name": "ten-item-drawer-scroll-and-footer-reachable",
+      "passed": true,
+      "bodyHeight": 680,
+      "contentHeight": 1831,
+      "footerBottom": 844,
+      "items": 10,
+      "viewportHeight": 844
+    },
+    {
+      "name": "long-input-within-viewport",
+      "passed": true,
+      "bottom": 835.1999969482422,
+      "viewportHeight": 844,
+      "viewportWidth": 390,
+      "width": 390
+    },
+    {
+      "name": "keyboard-scroll-and-jump-to-latest",
+      "passed": true
+    },
+    {
+      "name": "stop-stream-unlocks-composer",
+      "passed": true
+    },
+    {
+      "name": "revoke-from-chat",
+      "passed": true
+    },
+    {
+      "name": "business-boundary-visible-price",
+      "passed": true
+    },
+    {
+      "name": "business-boundary-visible-stock",
+      "passed": true
+    },
+    {
+      "name": "business-boundary-visible-qualification",
+      "passed": true
+    },
+    {
+      "name": "business-boundary-visible-expiry",
+      "passed": true
+    },
+    {
+      "name": "logout-clears-history-and-purchase-state",
+      "passed": true
+    },
+    {
+      "name": "account-switch-has-no-previous-user-history",
+      "passed": true
+    },
+    {
+      "name": "cross-user-draft-content-denied",
+      "passed": true
+    }
+  ],
+  "driver": "Codex CUA",
+  "syntheticOnly": true
+}

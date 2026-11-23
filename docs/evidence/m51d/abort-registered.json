@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "processTerminatedDuringLockWait": true,
+  "orderPending": true,
+  "paymentRecords": 0,
+  "purchaseLedgers": 0,
+  "requestStatus": "REGISTERED"
+}

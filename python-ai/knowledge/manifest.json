@@ -1,0 +1,46 @@
+[
+  {
+    "id": "platform-personalization",
+    "version": "1.0",
+    "title": "健康档案与个性化授权规则",
+    "source": "local://platform/personalization",
+    "kind": "platform",
+    "reviewStatus": "approved",
+    "reviewer": "project-policy-maintainer",
+    "reviewedAt": "2026-10-27",
+    "file": "personalization.md"
+  },
+  {
+    "id": "platform-wallet",
+    "version": "1.3",
+    "title": "演示钱包与支付验证规则",
+    "source": "local://platform/wallet",
+    "kind": "platform",
+    "reviewStatus": "approved",
+    "reviewer": "project-policy-maintainer",
+    "reviewedAt": "2026-10-28",
+    "file": "wallet.md"
+  },
+  {
+    "id": "platform-orders",
+    "version": "1.7",
+    "title": "订单确认与库存规则",
+    "source": "local://platform/orders",
+    "kind": "platform",
+    "reviewStatus": "approved",
+    "reviewer": "project-policy-maintainer",
+    "reviewedAt": "2026-10-28",
+    "file": "orders.md"
+  },
+  {
+    "id": "platform-scope",
+    "version": "1.0",
+    "title": "咨询范围与资料来源",
+    "source": "local://platform/scope",
+    "kind": "platform",
+    "reviewStatus": "approved",
+    "reviewer": "project-policy-maintainer",
+    "reviewedAt": "2026-10-27",
+    "file": "scope.md"
+  }
+]

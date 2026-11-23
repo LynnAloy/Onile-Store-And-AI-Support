@@ -1,0 +1,43 @@
+{
+  "passed": true,
+  "count": 8,
+  "cases": [
+    {
+      "case": "commit_response_lost_keeps_unknown",
+      "passed": true
+    },
+    {
+      "case": "backend_outage_and_restart_recovers_original_receipt",
+      "passed": true
+    },
+    {
+      "case": "authorization_client_timeout_requires_explicit_new_verification",
+      "passed": true
+    },
+    {
+      "case": "late_response_revokes_only_original_grant",
+      "passed": true
+    },
+    {
+      "case": "process_exit_before_financial_write_keeps_registered_without_debit",
+      "passed": true
+    },
+    {
+      "case": "real_120_second_reconciliation_then_explicit_new_payment",
+      "passed": true
+    },
+    {
+      "case": "late_grant_after_account_switch_uses_original_identity",
+      "passed": true
+    },
+    {
+      "case": "stale_401_after_account_switch_preserves_new_session",
+      "passed": true
+    }
+  ],
+  "execution": "real CUA browser against loopback proxy and Java/MySQL",
+  "syntheticOnly": true,
+  "temporaryTabClosed": true,
+  "userOriginalTabPreserved": true,
+  "noQuotaBlockedActionCountedAsPayment": true
+}

@@ -1,0 +1,7 @@
+{
+  "passed": true,
+  "tests": 83,
+  "failures": 0,
+  "runtime": "local Python 3.11",
+  "realMySQL": false
+}

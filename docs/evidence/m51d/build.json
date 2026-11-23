@@ -1,0 +1,6 @@
+{
+  "passed": true,
+  "normalPaymentsEnabled": false,
+  "demoPaymentsEnabled": true,
+  "existingChunkSizeWarning": true
+}

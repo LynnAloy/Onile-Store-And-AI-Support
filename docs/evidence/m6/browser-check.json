@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "environment": "isolated-demo",
+  "checks": [
+    "admin stock update and review OTC/RX with source",
+    "ordinary user navigation hides admin management",
+    "wallet default 50/200 with fixed PST and PIN enable",
+    "real model 2-item intent paid automatically for CNY 5.00",
+    "paid receipt restored on chat refresh without repeat execution",
+    "shipping and PAID receipt visible in order detail",
+    "wallet balance 95.00, points 5, daily used 5.00, remaining 195.00",
+    "immediate disable without PIN preserves used daily allowance",
+    "RX product proposal remains blocked and does not auto settle"
+  ],
+  "syntheticOnly": true
+}

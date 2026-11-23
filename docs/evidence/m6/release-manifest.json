@@ -1,0 +1,342 @@
+{
+  "feature": "M6 administrator and consented auto ordering",
+  "validated": true,
+  "artifacts": [
+    {
+      "path": "DeepseekDoc/dist/assets/Activate-Bv7MLsOr.css",
+      "sha256": "c3919af10a7600ee284909a78b59b88abb0fa4897810f1f12ef34679fc4168ef"
+    },
+    {
+      "path": "DeepseekDoc/dist/assets/Activate-C10Dl28r.js",
+      "sha256": "b9f61215f0ef2655160ab42e35535a0fed93fe18dc54d16f98005d7b8bd01f0b"
+    },
+    {
+      "path": "DeepseekDoc/dist/assets/AdminMedicines-BNsxEXIU.css",
+      "sha256": "eda12c55f6050c1b8346afdeae707cf7c44a3dafff56832b72230c22dc672f3d"
+    },
+    {
+      "path": "DeepseekDoc/dist/assets/AdminMedicines-CnPwQBK5.js",
+      "sha256": "e86f8b7f0063066d80784fc8477510084fee54bf8c635546084faf9017f178ee"
+    },
+    {
+      "path": "DeepseekDoc/dist/assets/Charge-B9RfB-MP.css",
+      "sha256": "35c6a69e72bedb89898fe222dd549512f291aa9cbbafbaba03816b84cccc60a8"
+    },
+    {
+      "path": "DeepseekDoc/dist/assets/Charge-BKp161do.js",
+      "sha256": "f1a82a74efd49e79e6974a129ada23da1ff0e9c03f09417d68b262dfb9345c0d"
+    },
+    {
+      "path": "DeepseekDoc/dist/assets/Drafts-DxzWGGGg.js",
+      "sha256": "168434c2cb26d7bd2018deb2a86ec99ecc37dd369c5ea645d0a73e1dd5606ff6"
+    },
+    {
+      "path": "DeepseekDoc/dist/assets/Drafts-E5XIUzsg.css",
+      "sha256": "e11eae4edacf8c9c08f4747d25bf22edbe9e5287791a864f3ff9172f3128ccf4"
+    },
+    {
+      "path": "DeepseekDoc/dist/assets/Form-BUqY2W8Y.js",
+      "sha256": "7717f5d71d9f421cb230360649eeb21283fe8806c718b937ed78b60585d93aac"
+    },
+    {
+      "path": "DeepseekDoc/dist/assets/Home-D-HbCRvX.js",
+      "sha256": "bf6c820a94c7cd96b62be3b0ca755199e48b8632020fe2e02334458d68044156"
+    },
+    {
+      "path": "DeepseekDoc/dist/assets/index-B504RoaZ.js",
+      "sha256": "76f6276a9ec981b10c5d4bfeb3eb01446d6773f2667c7a106bdfcf993a48d548"
+    },
+    {
+      "path": "DeepseekDoc/dist/assets/index-DmQWPWCs.css",
+      "sha256": "70e1471daa7a937fd237caa5ad13b0475c09595a9b860debdad0e167406520fb"
+    },
+    {
+      "path": "DeepseekDoc/dist/assets/Info-hiPeip7g.css",
+      "sha256": "4b6bc713249e445e0adcb62abb0240a00fbe7eaa36b6d1b4aa17b4fb175c7a14"
+    },
+    {
+      "path": "DeepseekDoc/dist/assets/Info-j9akh9Fy.js",
+      "sha256": "408d9f4693ff3096e306c3db68e0c56d8ed0326fbce4b0db21fa2fc6f2c36446"
+    },
+    {
+      "path": "DeepseekDoc/dist/assets/Login-B6VyUbvS.js",
+      "sha256": "6a2691834c8eef00f3b3865eed85aebb0f0864bbdab0264d1aeac09ddcab71c2"
+    },
+    {
+      "path": "DeepseekDoc/dist/assets/Login-BgLK5Cvk.css",
+      "sha256": "0c508e3f1cb12222adceb9bf9185793d384a7f21868f8ca8e95956da8af8fe04"
+    },
+    {
+      "path": "DeepseekDoc/dist/assets/Logout-M_8hoprg.js",
+      "sha256": "1c9a7d81c1d5c4101d8862a5fff68b9b56d320f26bb28be4dd4253f404f987d7"
+    },
+    {
+      "path": "DeepseekDoc/dist/assets/Logout-SlqGPD10.css",
+      "sha256": "4a9a76a26a7dd5cfe9cf520dca45ef047d3ee40ce38745434343f4313101380f"
+    },
+    {
+      "path": "DeepseekDoc/dist/assets/orderStore-By0Z8tGk.js",
+      "sha256": "590ec3eb06573956cad1fe12e8be7e81b7e6b4a83ca4860519e242787c08a9eb"
+    },
+    {
+      "path": "DeepseekDoc/dist/assets/Payment-CqcqIZuQ.js",
+      "sha256": "b905f2afa7c4b693293cd7d48a765d1116151cdd54ab375a7af7ee3f79e98ec1"
+    },
+    {
+      "path": "DeepseekDoc/dist/assets/Payment-YIUSl80x.css",
+      "sha256": "afa2750bcfd0f4c71a60732fc4b0a008c42fb00853369fae7554b325a05d980e"
+    },
+    {
+      "path": "DeepseekDoc/dist/assets/PaymentOrders-CVREgiQM.js",
+      "sha256": "96cd4ea9999498b0a64ff8c1f1b3be6096d88b42db782a669d5e42220850aefa"
+    },
+    {
+      "path": "DeepseekDoc/dist/assets/PaymentOrders-DWf4yF5O.css",
+      "sha256": "b71e26187c0749527ff2e81a9d3b41d26df493fb7cb8a552e51b70eba4cf0055"
+    },
+    {
+      "path": "DeepseekDoc/dist/assets/paymentRecovery-BqV_5xmC.js",
+      "sha256": "eea32ce5fa89d5659d8ca420d3730d0a53ecdbd72a8072f26093289a5150c067"
+    },
+    {
+      "path": "DeepseekDoc/dist/assets/Register-CSB-Awbk.js",
+      "sha256": "aba2bc2a25cffc455753b3245870f6cbe9db1c9cd34e13a91206adfeb8ba3c5d"
+    },
+    {
+      "path": "DeepseekDoc/dist/assets/Register-Dn2Zu5Kv.css",
+      "sha256": "f7e9bf1e8894b5535dcab0975bc9d0c4c0d0e94b6ec95b1462c4cdf3378b80e5"
+    },
+    {
+      "path": "DeepseekDoc/dist/assets/ShoppingFail-CWA89oii.css",
+      "sha256": "58357af97d99a3312be93a6e5bd0c695371657f0900b01b33642df85692cf1ee"
+    },
+    {
+      "path": "DeepseekDoc/dist/assets/ShoppingFail-UKH0uxvC.js",
+      "sha256": "4e074e2615e9c06d08cb380d0764e828f72b9594b6e5e08dcb15137beaccab22"
+    },
+    {
+      "path": "DeepseekDoc/dist/assets/ShoppingSuccess-56zlxAN_.js",
+      "sha256": "ff33d2776e0c8162abee0dbd36a65dbc979776e357b013688f164d10ad5b6402"
+    },
+    {
+      "path": "DeepseekDoc/dist/assets/ShoppingSuccess-Evx7gcgh.css",
+      "sha256": "3840741cbd4b20bd9498aadcbd5394096245df55aa77efc36f78839bf250cacf"
+    },
+    {
+      "path": "DeepseekDoc/dist/favicon.ico",
+      "sha256": "db74ab0b78338c1f778f8398c45f4103c99aea0e845a3118a7750b4eeafd3445"
+    },
+    {
+      "path": "DeepseekDoc/dist/index.html",
+      "sha256": "1fe649a2cd0010f6a190823cbc8a9d5b2afda30c6f0176e8dbb57faa7ef1e8d5"
+    },
+    {
+      "path": "DeepseekDoc/src/components/views/AdminMedicines.vue",
+      "sha256": "02efbd7eca73fbe62a9b6730ecb02d91c7cec9188ffa83f170ba499ea3265aa7"
+    },
+    {
+      "path": "DeepseekDoc/src/components/views/AutoOrderPolicy.vue",
+      "sha256": "1f2b954dfd5644b225fa1410b1dffed53c758f681a3cf11a9283401305a1fa83"
+    },
+    {
+      "path": "DeepseekDoc/src/components/views/Charge.vue",
+      "sha256": "b394fe5844daaede44e7e9348bbebaa0efd3ea3827d0ec30d3ee0fab55bb28ad"
+    },
+    {
+      "path": "DeepseekDoc/src/components/views/Home.vue",
+      "sha256": "7313d916300a55d513672143a79ac84fd2e6edd0b538327f5bca6c7aae995971"
+    },
+    {
+      "path": "DeepseekDoc/src/components/views/Menu.vue",
+      "sha256": "a7352150cdba929c4bed53dd1add7bf6d40a94afbe50eb9745d5f710c665dbc4"
+    },
+    {
+      "path": "DeepseekDoc/src/router/config.js",
+      "sha256": "f69c8d3fb1be944ebe821db4f454348d1979d255c6c82bc1d7ed9b13ba15dc8d"
+    },
+    {
+      "path": "DeepseekDoc/src/services/commerceClient.mjs",
+      "sha256": "6e7a940bdc8e8571bfb73ec9822cdd690d13f4cc1b3951e34251638f8544d7ca"
+    },
+    {
+      "path": "DeepseekDoc/tests/commerce.test.mjs",
+      "sha256": "70067c4901624b9a0599bad4273b4bafae986a675a3f067598f72625d7da102b"
+    },
+    {
+      "path": "docs/commerce.openapi.json",
+      "sha256": "fe8b1c670346213cf8a3754c281deec57b0e63e2fe48979b8014219c482d0018"
+    },
+    {
+      "path": "docs/evidence/m6/admin.png",
+      "sha256": "d4258b1145be402cdfaa2dde45d1318c2b74ace0003828643f37352c74635b2d"
+    },
+    {
+      "path": "docs/evidence/m6/auto-order.png",
+      "sha256": "1ceebcffeca7e5f2ece0a9001a98583a0c3892d94dbf47655bdb4b6724a35409"
+    },
+    {
+      "path": "docs/evidence/m6/browser-check.json",
+      "sha256": "011f2b5f0b3fd75c201474c9d67365e90ebf20152ade87d645c0c6eaa24564c7"
+    },
+    {
+      "path": "docs/evidence/m6/cleanup.json",
+      "sha256": "da40ffba77e7ff5a51ab3d64e0a9d7546293b960aa5ca4b11083f4d1e9622d30"
+    },
+    {
+      "path": "docs/evidence/m6/live-check.json",
+      "sha256": "dece27b5d889c95a5191b5a059e4a12656ac8a8d84931dae9f291bb18dd2b923"
+    },
+    {
+      "path": "docs/evidence/m6/mysql-commerce.json",
+      "sha256": "ead2fb0573b92760226144138b27a74bda8c9a293ff2c18cad111373fb2034bc"
+    },
+    {
+      "path": "docs/evidence/m6/mysql-payment.json",
+      "sha256": "155e6c4e1d581d4aaa926844207831338fd05c93cb2a3decfa8c6663e81a5b80"
+    },
+    {
+      "path": "docs/evidence/m6/paid-order.png",
+      "sha256": "7a64b099f256f86110c238ac6418cb4edd03642bb30d83cf04783e453f13f5c3"
+    },
+    {
+      "path": "docs/evidence/m6/readiness.json",
+      "sha256": "2ace701d569d9568e5cb564074141ef25b7df676df4743bd41c9abc79105bb62"
+    },
+    {
+      "path": "docs/evidence/m6/validation.json",
+      "sha256": "a44a5f3994cf2da8442f9806219b3b9b3f26e321822c8d027e8f7ee3ef51110f"
+    },
+    {
+      "path": "docs/evidence/m6/wallet-after.png",
+      "sha256": "eb7e4fac184c1b218054c3990e55e695ac22bc7f973380aac430a25122fa9deb"
+    },
+    {
+      "path": "docs/evidence/m6/wallet.png",
+      "sha256": "22b4d92c6d37442c487dac8060c44b87e8a8f965dc223eab5f086204155f9e6f"
+    },
+    {
+      "path": "docs/java-python-contract.openapi.json",
+      "sha256": "e4c5cdc8329ecb584b584d9b502e0bb75248bbbe7103ec418b300049caeb142f"
+    },
+    {
+      "path": "docs/M6-admin-auto-order.md",
+      "sha256": "6035c5cc598c615bd80f4c92bfabf83e284f58926940a84696b69aa7fdb52337"
+    },
+    {
+      "path": "docs/M6-review.md",
+      "sha256": "6906d9b7006667664ecf0b39b2033552de387ee00bd19ae0622a978529296f02"
+    },
+    {
+      "path": "docs/sql/M6-commerce.sql",
+      "sha256": "e001247d3618d25a91e5b34c31ea93ec18c2f93c744ecfd27628103f27daa44c"
+    },
+    {
+      "path": "mybatis-plus-demo/mybatis-plus-demo/src/main/java/com/example/mybatisplus/config/CommerceSchemaGuard.java",
+      "sha256": "5cc8af260c7bcba9c6c7296f8d40e9e0fd09e7525b20f96e68b2cf8c480053f2"
+    },
+    {
+      "path": "mybatis-plus-demo/mybatis-plus-demo/src/main/java/com/example/mybatisplus/controller/CommerceController.java",
+      "sha256": "622b20d87653014f92e35ce3d0725784db1e9b6a39121eb57fd90cb114fdfcf1"
+    },
+    {
+      "path": "mybatis-plus-demo/mybatis-plus-demo/src/main/java/com/example/mybatisplus/dto/CommerceRequests.java",
+      "sha256": "20eba0df12f68dc6902e4d44f0d3e71fff0991acad11810cd0efb483a3e40ce3"
+    },
+    {
+      "path": "mybatis-plus-demo/mybatis-plus-demo/src/main/java/com/example/mybatisplus/service/AutoOrderService.java",
+      "sha256": "cfb3d2ef7efb71583f36fa461ad7f0bbc19fbd9e5432c3cc52c88010ec0ebbc6"
+    },
+    {
+      "path": "mybatis-plus-demo/mybatis-plus-demo/src/main/java/com/example/mybatisplus/service/CommerceAccess.java",
+      "sha256": "e7099a4d6b4e7f7b96b66b04ade61401fc76377a868a50fa60ffc15fa83cae73"
+    },
+    {
+      "path": "mybatis-plus-demo/mybatis-plus-demo/src/main/java/com/example/mybatisplus/service/MedicineAdminService.java",
+      "sha256": "8a66756508e6f6a192c132c7f098a08040d6dc6ee000e5ba20239c68218da17f"
+    },
+    {
+      "path": "mybatis-plus-demo/mybatis-plus-demo/src/main/java/com/example/mybatisplus/service/PaymentService.java",
+      "sha256": "e721442145117e0b9053095ff6af78bf3168e8750cfd37ce7f439ccfef2d7c4f"
+    },
+    {
+      "path": "mybatis-plus-demo/mybatis-plus-demo/src/main/java/com/example/mybatisplus/service/PurchaseGrounding.java",
+      "sha256": "42f09331d7d792a7197e9e63e5acb3500b3e2fc12082a19556add277c76ec498"
+    },
+    {
+      "path": "mybatis-plus-demo/mybatis-plus-demo/src/main/resources/application.properties",
+      "sha256": "40539115ca20569aa757317e9a77468d7b839cc947e16c536b0775efad717c30"
+    },
+    {
+      "path": "mybatis-plus-demo/mybatis-plus-demo/src/test/java/com/example/mybatisplus/CommerceBusinessTests.java",
+      "sha256": "0ee52e4a0e15ef68ff9ec444aed4c0b0a2f5922edea34a84b2d6519ffcb4e253"
+    },
+    {
+      "path": "mybatis-plus-demo/mybatis-plus-demo/src/test/java/com/example/mybatisplus/CommerceMySqlTests.java",
+      "sha256": "74afe69feedd17dad777737a4d3469ff99aaf5fc7ad86fa18ed973cc92b3a8d5"
+    },
+    {
+      "path": "mybatis-plus-demo/mybatis-plus-demo/src/test/resources/sql/m6-test-schema.sql",
+      "sha256": "e001247d3618d25a91e5b34c31ea93ec18c2f93c744ecfd27628103f27daa44c"
+    },
+    {
+      "path": "mybatis-plus-demo/mybatis-plus-demo/target/mybatis-plus-demo-1.0.0.jar",
+      "sha256": "08d240af3a48248c922eb768c3103781fb997a52be88867a51c657cf54f675cd"
+    },
+    {
+      "path": "python-ai/app/model.py",
+      "sha256": "1a10ad9098ed31133305a11a4c31322b08eee97d6a1d7035cfafc41f1661c805"
+    },
+    {
+      "path": "python-ai/knowledge/evaluation.json",
+      "sha256": "cb4673193eafe322d88fea59713f2f9071f2347740d2c40c083ea59982416926"
+    },
+    {
+      "path": "python-ai/knowledge/manifest.json",
+      "sha256": "c8e6e6da5d0e52812af07cfc37f78ad2e31bff09fa989a9fb1a3517ecf22e979"
+    },
+    {
+      "path": "python-ai/knowledge/orders.md",
+      "sha256": "00dcb68859cfaebc0dcc3665ee8469589f0355f42d56d43234c234cac46bc11e"
+    },
+    {
+      "path": "python-ai/knowledge/personalization.md",
+      "sha256": "26e37003604542017bef3f0311946d311320c56c55f76fa6acc064fd6f7da5c9"
+    },
+    {
+      "path": "python-ai/knowledge/scope.md",
+      "sha256": "305089ce2c5706fa016d71d98c4567eb15bb64a39470ac2f474fd25d9a0530d3"
+    },
+    {
+      "path": "python-ai/knowledge/wallet.md",
+      "sha256": "7f8118f3684c46b13445194b8109b0253e2ff5940b66771c573dd2f537cbd4e8"
+    },
+    {
+      "path": "scripts/local_stack.py",
+      "sha256": "4ea7f732f7e0c49ab8c8c3dbb2617b7577c5977f8d27e2265fc649ddba0855e4"
+    },
+    {
+      "path": "scripts/m6_admin.py",
+      "sha256": "f3ae294720f9875f63f58dac971b02ab327b3dd58cd35a0726b19516a993a8f4"
+    },
+    {
+      "path": "scripts/m6_live.py",
+      "sha256": "a12589be8d986d5580f89912421cf449f1695e1054a4d02d87dbe58f689fef1a"
+    },
+    {
+      "path": "scripts/m6_migrate.py",
+      "sha256": "8c2e36fc6edf5046b08a213f94117af65322612b1f7401df66aa373d28f7b863"
+    },
+    {
+      "path": "scripts/m6_mysql_tests.py",
+      "sha256": "1dc078faddeeb91f7083f257f3439455d2094128fb740f6c2f043be4d4fadff9"
+    },
+    {
+      "path": "scripts/test_m51_ops.py",
+      "sha256": "3e1f7bc496dd3caf579e4de148639ccd922ce46be98f02227b0b511d2dbd1a22"
+    },
+    {
+      "path": "scripts/test_m6_ops.py",
+      "sha256": "4b99f2b6e74a73501d5ed04b9ee6c2d7cc2d2e9564475e4230259004c3816c4a"
+    }
+  ]
+}

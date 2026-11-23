@@ -1,0 +1,1279 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "M5.1 Payment Contract — DESIGN ONLY",
+    "version": "5.1.0-design.1",
+    "description": "Frozen design supplement. Not implemented or deployed. USER-only synthetic wallet; no Python payment capability."
+  },
+  "servers": [
+    {
+      "url": "http://127.0.0.1:18080",
+      "description": "Future isolated demo implementation only"
+    }
+  ],
+  "x-design-only": true,
+  "paths": {
+    "/api/order-drafts/{draftId}/checkout": {
+      "post": {
+        "operationId": "checkoutDraft",
+        "x-implementation-status": "NOT_IMPLEMENTED",
+        "security": [
+          {
+            "UserToken": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "draftId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "Idempotency-Key",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9_-]{8,64}$"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Authoritative result; no-store. Optional payment/requestOutcome omitted when absent.",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "enum": [
+                    "no-store"
+                  ]
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Order"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "See frozen error matrix; UNKNOWN must be recovered by GET.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "See frozen error matrix; UNKNOWN must be recovered by GET.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "See frozen error matrix; UNKNOWN must be recovered by GET.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "See frozen error matrix; UNKNOWN must be recovered by GET.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "See frozen error matrix; UNKNOWN must be recovered by GET.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "See frozen error matrix; UNKNOWN must be recovered by GET.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "See frozen error matrix; UNKNOWN must be recovered by GET.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "See frozen error matrix; UNKNOWN must be recovered by GET.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Version"
+              }
+            }
+          }
+        },
+        "description": "DESIGN ONLY. See M5.1-A-design.md for terminal replay, revocation, transaction and error semantics."
+      }
+    },
+    "/api/orders/{orderId}": {
+      "get": {
+        "operationId": "getPaymentOrder",
+        "x-implementation-status": "NOT_IMPLEMENTED",
+        "security": [
+          {
+            "UserToken": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "orderId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 30,
+              "pattern": "^[A-Za-z0-9_-]+$"
+            }
+          },
+          {
+            "name": "paymentRequestKey",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9_-]{8,64}$"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "USER-owned v5 snapshot or unchanged legacy view. Optional payment/requestOutcome omitted when absent; Cache-Control no-store.",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "enum": [
+                    "no-store"
+                  ]
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/Order"
+                    },
+                    {
+                      "$ref": "#/components/schemas/LegacyOrder"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "See frozen error matrix; UNKNOWN must be recovered by GET.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "See frozen error matrix; UNKNOWN must be recovered by GET.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "See frozen error matrix; UNKNOWN must be recovered by GET.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "See frozen error matrix; UNKNOWN must be recovered by GET.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "See frozen error matrix; UNKNOWN must be recovered by GET.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "See frozen error matrix; UNKNOWN must be recovered by GET.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "See frozen error matrix; UNKNOWN must be recovered by GET.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "See frozen error matrix; UNKNOWN must be recovered by GET.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "description": "DESIGN ONLY. See M5.1-A-design.md for terminal replay, revocation, transaction and error semantics."
+      }
+    },
+    "/api/orders/{orderId}/payment-authorizations": {
+      "post": {
+        "operationId": "issuePaymentAuthorization",
+        "x-implementation-status": "NOT_IMPLEMENTED",
+        "security": [
+          {
+            "UserToken": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "orderId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 30,
+              "pattern": "^[A-Za-z0-9_-]+$"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Authoritative result; no-store. Optional payment/requestOutcome omitted when absent.",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "enum": [
+                    "no-store"
+                  ]
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Grant"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "See frozen error matrix; UNKNOWN must be recovered by GET.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "See frozen error matrix; UNKNOWN must be recovered by GET.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "See frozen error matrix; UNKNOWN must be recovered by GET.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "See frozen error matrix; UNKNOWN must be recovered by GET.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "See frozen error matrix; UNKNOWN must be recovered by GET.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "See frozen error matrix; UNKNOWN must be recovered by GET.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "See frozen error matrix; UNKNOWN must be recovered by GET.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "See frozen error matrix; UNKNOWN must be recovered by GET.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Authorize"
+              }
+            }
+          }
+        },
+        "description": "DESIGN ONLY. See M5.1-A-design.md for terminal replay, revocation, transaction and error semantics."
+      },
+      "delete": {
+        "operationId": "revokePaymentAuthorization",
+        "x-implementation-status": "NOT_IMPLEMENTED",
+        "security": [
+          {
+            "UserToken": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "orderId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 30,
+              "pattern": "^[A-Za-z0-9_-]+$"
+            }
+          },
+          {
+            "name": "authorizationId",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Authoritative result; no-store. Optional payment/requestOutcome omitted when absent.",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "enum": [
+                    "no-store"
+                  ]
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Revoked"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "See frozen error matrix; UNKNOWN must be recovered by GET.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "See frozen error matrix; UNKNOWN must be recovered by GET.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "See frozen error matrix; UNKNOWN must be recovered by GET.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "See frozen error matrix; UNKNOWN must be recovered by GET.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "See frozen error matrix; UNKNOWN must be recovered by GET.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "See frozen error matrix; UNKNOWN must be recovered by GET.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "See frozen error matrix; UNKNOWN must be recovered by GET.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "See frozen error matrix; UNKNOWN must be recovered by GET.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "description": "DESIGN ONLY. See M5.1-A-design.md for terminal replay, revocation, transaction and error semantics."
+      }
+    },
+    "/api/orders/{orderId}/pay": {
+      "post": {
+        "operationId": "payOrder",
+        "x-implementation-status": "NOT_IMPLEMENTED",
+        "security": [
+          {
+            "UserToken": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "orderId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 30,
+              "pattern": "^[A-Za-z0-9_-]+$"
+            }
+          },
+          {
+            "name": "Idempotency-Key",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9_-]{8,64}$"
+            }
+          },
+          {
+            "name": "X-Payment-Authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9_-]{43}$"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Authoritative result; no-store. Optional payment/requestOutcome omitted when absent.",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "enum": [
+                    "no-store"
+                  ]
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Receipt"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "See frozen error matrix; UNKNOWN must be recovered by GET.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "See frozen error matrix; UNKNOWN must be recovered by GET.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "See frozen error matrix; UNKNOWN must be recovered by GET.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "See frozen error matrix; UNKNOWN must be recovered by GET.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "See frozen error matrix; UNKNOWN must be recovered by GET.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "See frozen error matrix; UNKNOWN must be recovered by GET.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "See frozen error matrix; UNKNOWN must be recovered by GET.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "See frozen error matrix; UNKNOWN must be recovered by GET.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Version"
+              }
+            }
+          }
+        },
+        "description": "DESIGN ONLY. See M5.1-A-design.md for terminal replay, revocation, transaction and error semantics."
+      }
+    },
+    "/api/orders/{orderId}/close": {
+      "post": {
+        "operationId": "closeUnpaidOrder",
+        "x-implementation-status": "NOT_IMPLEMENTED",
+        "security": [
+          {
+            "UserToken": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "orderId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 30,
+              "pattern": "^[A-Za-z0-9_-]+$"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Authoritative result; no-store. Optional payment/requestOutcome omitted when absent.",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "enum": [
+                    "no-store"
+                  ]
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Order"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "See frozen error matrix; UNKNOWN must be recovered by GET.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "See frozen error matrix; UNKNOWN must be recovered by GET.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "See frozen error matrix; UNKNOWN must be recovered by GET.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "See frozen error matrix; UNKNOWN must be recovered by GET.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "See frozen error matrix; UNKNOWN must be recovered by GET.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "See frozen error matrix; UNKNOWN must be recovered by GET.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "See frozen error matrix; UNKNOWN must be recovered by GET.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "See frozen error matrix; UNKNOWN must be recovered by GET.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Version"
+              }
+            }
+          }
+        },
+        "description": "DESIGN ONLY. See M5.1-A-design.md for terminal replay, revocation, transaction and error semantics."
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "UserToken": {
+        "type": "http",
+        "scheme": "bearer",
+        "description": "USER session only. Payment token is not a Bearer identity."
+      }
+    },
+    "schemas": {
+      "Error": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "outcome": {
+            "type": "string",
+            "enum": [
+              "NOT_APPLIED",
+              "UNKNOWN"
+            ]
+          }
+        },
+        "required": [
+          "code",
+          "message"
+        ]
+      },
+      "Version": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "expectedVersion": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 9007199254740991
+          }
+        },
+        "required": [
+          "expectedVersion"
+        ]
+      },
+      "Authorize": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "expectedVersion": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 9007199254740991
+          },
+          "password": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 72,
+            "writeOnly": true,
+            "description": "UTF-8 <=72 bytes; never trim, log or persist plaintext."
+          }
+        },
+        "required": [
+          "expectedVersion",
+          "password"
+        ]
+      },
+      "Line": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "medicineId": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 2147483647
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100
+          },
+          "quantity": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 99
+          },
+          "price": {
+            "type": "string",
+            "pattern": "^(0|[1-9][0-9]{0,7})\\.[0-9]{2}$",
+            "example": "10.00"
+          },
+          "qualificationVersion": {
+            "type": "integer",
+            "minimum": 1
+          }
+        },
+        "required": [
+          "medicineId",
+          "name",
+          "quantity",
+          "price",
+          "qualificationVersion"
+        ]
+      },
+      "Receipt": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "paymentId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 30,
+            "pattern": "^[A-Za-z0-9_-]+$"
+          },
+          "orderId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 30,
+            "pattern": "^[A-Za-z0-9_-]+$"
+          },
+          "amount": {
+            "type": "string",
+            "pattern": "^(0|[1-9][0-9]{0,7})\\.[0-9]{2}$",
+            "example": "10.00"
+          },
+          "currency": {
+            "type": "string",
+            "enum": [
+              "CNY"
+            ]
+          },
+          "paidAt": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "ledgerId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 30,
+            "pattern": "^[A-Za-z0-9_-]+$"
+          }
+        },
+        "required": [
+          "paymentId",
+          "orderId",
+          "amount",
+          "currency",
+          "paidAt",
+          "ledgerId"
+        ]
+      },
+      "RequestOutcome": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "requestKey": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "REGISTERED",
+              "SUCCEEDED",
+              "REJECTED"
+            ]
+          },
+          "code": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "required": [
+          "requestKey",
+          "status",
+          "code"
+        ]
+      },
+      "Order": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "orderId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 30,
+            "pattern": "^[A-Za-z0-9_-]+$"
+          },
+          "sourceDraftId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "paymentStatus": {
+            "type": "string",
+            "enum": [
+              "PENDING_PAYMENT",
+              "PAID",
+              "CLOSED",
+              "LEGACY_UNVERIFIED"
+            ]
+          },
+          "version": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 9007199254740991,
+            "nullable": true
+          },
+          "totalPrice": {
+            "type": "string",
+            "pattern": "^(0|[1-9][0-9]{0,7})\\.[0-9]{2}$",
+            "example": "10.00"
+          },
+          "currency": {
+            "type": "string",
+            "enum": [
+              "CNY"
+            ]
+          },
+          "expiresAt": {
+            "type": "integer",
+            "minimum": 0,
+            "nullable": true
+          },
+          "closeReason": {
+            "type": "string",
+            "enum": [
+              "USER_CANCELLED",
+              "EXPIRED",
+              "CATALOG_CHANGED"
+            ],
+            "nullable": true
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Line"
+            },
+            "minItems": 1,
+            "maxItems": 10
+          },
+          "recipientName": {
+            "type": "string",
+            "maxLength": 15
+          },
+          "recipientPhone": {
+            "type": "string",
+            "maxLength": 20
+          },
+          "recipientAddress": {
+            "type": "string",
+            "maxLength": 50
+          },
+          "payment": {
+            "$ref": "#/components/schemas/Receipt"
+          },
+          "requestOutcome": {
+            "$ref": "#/components/schemas/RequestOutcome"
+          },
+          "id": {
+            "type": "string",
+            "maxLength": 30,
+            "description": "Compatibility alias of orderId"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "pending",
+              "completed",
+              "cancelled"
+            ]
+          },
+          "userId": {
+            "type": "string",
+            "maxLength": 36,
+            "description": "USER private view only; excluded from model tools"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "note": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 200
+          }
+        },
+        "required": [
+          "orderId",
+          "sourceDraftId",
+          "paymentStatus",
+          "version",
+          "totalPrice",
+          "currency",
+          "expiresAt",
+          "closeReason",
+          "items",
+          "recipientName",
+          "recipientPhone",
+          "recipientAddress",
+          "id",
+          "status",
+          "userId",
+          "createdAt",
+          "note"
+        ]
+      },
+      "Grant": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "authorizationId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "token": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9_-]{43}$",
+            "readOnly": true
+          },
+          "orderId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 30,
+            "pattern": "^[A-Za-z0-9_-]+$"
+          },
+          "orderVersion": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 9007199254740991
+          },
+          "amount": {
+            "type": "string",
+            "pattern": "^(0|[1-9][0-9]{0,7})\\.[0-9]{2}$",
+            "example": "10.00"
+          },
+          "currency": {
+            "type": "string",
+            "enum": [
+              "CNY"
+            ]
+          },
+          "expiresAt": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "authorizationId",
+          "token",
+          "orderId",
+          "orderVersion",
+          "amount",
+          "currency",
+          "expiresAt"
+        ]
+      },
+      "Revoked": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "revoked": {
+            "type": "boolean",
+            "enum": [
+              true
+            ]
+          }
+        },
+        "required": [
+          "revoked"
+        ]
+      },
+      "LegacyOrder": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "orderId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 30,
+            "pattern": "^[A-Za-z0-9_-]+$"
+          },
+          "paymentStatus": {
+            "type": "string",
+            "enum": [
+              "LEGACY_UNVERIFIED"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "pending",
+              "completed",
+              "cancelled"
+            ]
+          },
+          "totalPrice": {
+            "type": "string",
+            "pattern": "^(0|[1-9][0-9]{0,7})\\.[0-9]{2}$",
+            "example": "10.00"
+          }
+        },
+        "required": [
+          "orderId",
+          "paymentStatus",
+          "status",
+          "totalPrice"
+        ],
+        "description": "Retain existing USER-only legacy fields; no invented name/review snapshots or PAID inference."
+      }
+    }
+  }
+}

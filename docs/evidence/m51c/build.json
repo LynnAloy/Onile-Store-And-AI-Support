@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "normalMode": {
+    "paymentsEnabled": false,
+    "output": "DeepseekDoc/dist"
+  },
+  "demoMode": {
+    "paymentsEnabled": true,
+    "output": ".local-demo/frontend-build"
+  },
+  "existingChunkSizeWarning": true
+}
